@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :realtors
+  resources :houses
   get 'start_page/index'
 
   resources :house_hunters

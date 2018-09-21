@@ -1,0 +1,64 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Id:</strong>
+  <%= @house.id %>
+</p>
+
+<p>
+  <strong>Real estate company:</strong>
+  <%= @house.real_estate_company %>
+</p>
+
+<p>
+  <strong>Location:</strong>
+  <%= @house.location %>
+</p>
+
+<p>
+  <strong>Square footage:</strong>
+  <%= @house.square_footage %>
+</p>
+
+<p>
+  <strong>Year built:</strong>
+  <%= @house.year_built %>
+</p>
+
+<p>
+  <strong>Style:</strong>
+  <%= @house.style %>
+</p>
+
+<p>
+  <strong>List price:</strong>
+  <%= @house.list_price %>
+</p>
+
+<p>
+  <strong>Num of floors:</strong>
+  <%= @house.num_of_floors %>
+</p>
+
+<p>
+  <strong>Basement:</strong>
+  <%= @house.basement %>
+</p>
+
+<p>
+  <strong>Current owner:</strong>
+  <%= @house.current_owner %>
+</p>
+
+<p>
+  <strong>Realtor contact:</strong>
+  <%= @house.realtor_contact %>
+</p>
+
+<p>
+  <strong>Potential buyers[]:</strong>
+  <%= @house.potential_buyers[] %>
+</p>
+
+<%= link_to 'Edit', edit_house_path(@house) %> |
+<%= link_to 'Back', houses_path %>

@@ -1,0 +1,77 @@
+<%= form_with(model: house, local: true) do |form| %>
+  <% if house.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(house.errors.count, "error") %> prohibited this house from being saved:</h2>
+
+      <ul>
+      <% house.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :id %>
+    <%= form.text_field :id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :real_estate_company %>
+    <%= form.text_field :real_estate_company %>
+  </div>
+
+  <div class="field">
+    <%= form.label :location %>
+    <%= form.text_field :location %>
+  </div>
+
+  <div class="field">
+    <%= form.label :square_footage %>
+    <%= form.text_field :square_footage %>
+  </div>
+
+  <div class="field">
+    <%= form.label :year_built %>
+    <%= form.text_field :year_built %>
+  </div>
+
+  <div class="field">
+    <%= form.label :style %>
+    <%= form.text_field :style %>
+  </div>
+
+  <div class="field">
+    <%= form.label :list_price %>
+    <%= form.text_field :list_price %>
+  </div>
+
+  <div class="field">
+    <%= form.label :num_of_floors %>
+    <%= form.text_field :num_of_floors %>
+  </div>
+
+  <div class="field">
+    <%= form.label :basement %>
+    <%= form.check_box :basement %>
+  </div>
+
+  <div class="field">
+    <%= form.label :current_owner %>
+    <%= form.text_field :current_owner %>
+  </div>
+
+  <div class="field">
+    <%= form.label :realtor_contact %>
+    <%= form.text_field :realtor_contact %>
+  </div>
+
+  <div class="field">
+    <%= form.label :potential_buyers[] %>
+    <%= form.text_field :potential_buyers[] %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
