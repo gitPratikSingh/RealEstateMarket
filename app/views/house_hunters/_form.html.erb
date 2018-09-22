@@ -1,15 +1,20 @@
-<%= form_with(model: realtor, local: true) do |form| %>
-  <% if realtor.errors.any? %>
+<%= form_with(model: house_hunter, local: true) do |form| %>
+  <% if house_hunter.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(realtor.errors.count, "error") %> prohibited this realtor from being saved:</h2>
+      <h2><%= pluralize(house_hunter.errors.count, "error") %> prohibited this house_hunter from being saved:</h2>
 
       <ul>
-      <% realtor.errors.full_messages.each do |message| %>
+      <% house_hunter.errors.full_messages.each do |message| %>
         <li><%= message %></li>
       <% end %>
       </ul>
     </div>
   <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
 
   <div class="field">
     <%= form.label :email %>
@@ -22,18 +27,13 @@
   </div>
 
   <div class="field">
-    <%= form.label :full_name %>
-    <%= form.text_field :full_name %>
-  </div>
-
-  <div class="field">
     <%= form.label :phone %>
     <%= form.text_field :phone %>
   </div>
 
   <div class="field">
-    <%= form.label :company_id %>
-    <%= form.number_field :company_id %>
+    <%= form.label :preferred_contact %>
+    <%= select_tag(:preferred_contact, options_for_select([['E-mail', 1], ['Text', 2], ['Phone', 3]])) %>
   </div>
 
   <div class="actions">

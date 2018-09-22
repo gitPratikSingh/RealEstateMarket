@@ -12,13 +12,13 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :id %>
-    <%= form.text_field :id %>
+    <%= form.label :house_id %>
+    <%= form.number_field :house_id %>
   </div>
 
   <div class="field">
-    <%= form.label :real_estate_company %>
-    <%= form.text_field :real_estate_company %>
+    <%= form.label :company_id %>
+    <%= form.number_field :company_id %>
   </div>
 
   <div class="field">
@@ -28,12 +28,12 @@
 
   <div class="field">
     <%= form.label :square_footage %>
-    <%= form.text_field :square_footage %>
+    <%= form.number_field :square_footage %>
   </div>
 
   <div class="field">
     <%= form.label :year_built %>
-    <%= form.text_field :year_built %>
+    <%= form.number_field :year_built %>
   </div>
 
   <div class="field">
@@ -43,12 +43,12 @@
 
   <div class="field">
     <%= form.label :list_price %>
-    <%= form.text_field :list_price %>
+    <%= form.number_field :list_price %>
   </div>
 
   <div class="field">
     <%= form.label :num_of_floors %>
-    <%= form.text_field :num_of_floors %>
+    <%= form.number_field :num_of_floors %>
   </div>
 
   <div class="field">
@@ -67,8 +67,8 @@
   </div>
 
   <div class="field">
-    <%= form.label :potential_buyers[] %>
-    <%= form.text_field :potential_buyers[] %>
+    <%= form.label :potential_buyers %>
+    <%= form.text_field :potential_buyers %>
   </div>
 
   <div class="actions">

@@ -10,11 +10,41 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_09_21_015019) do
+ActiveRecord::Schema.define(version: 2018_09_22_160917) do
 
   create_table "house_hunters", force: :cascade do |t|
-    t.string "first_name"
-    t.string "last_name"
+    t.string "name"
+    t.string "email"
+    t.string "password"
+    t.string "phone"
+    t.string "preferred_contact"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "houses", force: :cascade do |t|
+    t.integer "house_id"
+    t.integer "company_id"
+    t.string "location"
+    t.integer "square_footage"
+    t.integer "year_built"
+    t.string "style"
+    t.integer "list_price"
+    t.integer "num_of_floors"
+    t.boolean "basement"
+    t.string "current_owner"
+    t.string "realtor_contact"
+    t.string "potential_buyers"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "realtors", force: :cascade do |t|
+    t.string "email"
+    t.string "password"
+    t.string "full_name"
+    t.string "phone"
+    t.integer "company_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

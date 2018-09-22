@@ -5,8 +5,8 @@
 <table>
   <thead>
     <tr>
-      <th>Id</th>
-      <th>Real estate company</th>
+      <th>House</th>
+      <th>Company</th>
       <th>Location</th>
       <th>Square footage</th>
       <th>Year built</th>
@@ -16,7 +16,7 @@
       <th>Basement</th>
       <th>Current owner</th>
       <th>Realtor contact</th>
-      <th>Potential buyers[]</th>
+      <th>Potential buyers</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -24,8 +24,8 @@
   <tbody>
     <% @houses.each do |house| %>
       <tr>
-        <td><%= house.id %></td>
-        <td><%= house.real_estate_company %></td>
+        <td><%= house.house_id %></td>
+        <td><%= house.company_id %></td>
         <td><%= house.location %></td>
         <td><%= house.square_footage %></td>
         <td><%= house.year_built %></td>
@@ -35,7 +35,7 @@
         <td><%= house.basement %></td>
         <td><%= house.current_owner %></td>
         <td><%= house.realtor_contact %></td>
-        <td><%= house.potential_buyers[] %></td>
+        <td><%= house.potential_buyers %></td>
         <td><%= link_to 'Show', house %></td>
         <td><%= link_to 'Edit', edit_house_path(house) %></td>
         <td><%= link_to 'Destroy', house, method: :delete, data: { confirm: 'Are you sure?' } %></td>
