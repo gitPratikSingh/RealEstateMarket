@@ -1,29 +1,29 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  id: 
-  real_estate_company: 
+  house_id: 1
+  company_id: 1
   location: MyString
-  square_footage: 
-  year_built: 
+  square_footage: 1
+  year_built: 1
   style: MyString
-  list_price: 
-  num_of_floors: 
+  list_price: 1
+  num_of_floors: 1
   basement: false
   current_owner: MyString
   realtor_contact: MyString
-  potential_buyers[]: 
+  potential_buyers: MyString
 
 two:
-  id: 
-  real_estate_company: 
+  house_id: 1
+  company_id: 1
   location: MyString
-  square_footage: 
-  year_built: 
+  square_footage: 1
+  year_built: 1
   style: MyString
-  list_price: 
-  num_of_floors: 
+  list_price: 1
+  num_of_floors: 1
   basement: false
   current_owner: MyString
   realtor_contact: MyString
-  potential_buyers[]: 
+  potential_buyers: MyString

@@ -17,7 +17,7 @@ class HousesControllerTest < ActionDispatch::IntegrationTest
 
   test "should create house" do
     assert_difference('House.count') do
-      post houses_url, params: { house: { basement: @house.basement, current_owner: @house.current_owner, id: @house.id, list_price: @house.list_price, location: @house.location, num_of_floors: @house.num_of_floors, potential_buyers[]: @house.potential_buyers[], real_estate_company: @house.real_estate_company, realtor_contact: @house.realtor_contact, square_footage: @house.square_footage, style: @house.style, year_built: @house.year_built } }
+      post houses_url, params: { house: { basement: @house.basement, company_id: @house.company_id, current_owner: @house.current_owner, house_id: @house.house_id, list_price: @house.list_price, location: @house.location, num_of_floors: @house.num_of_floors, potential_buyers: @house.potential_buyers, realtor_contact: @house.realtor_contact, square_footage: @house.square_footage, style: @house.style, year_built: @house.year_built } }
     end
 
     assert_redirected_to house_url(House.last)
@@ -34,7 +34,7 @@ class HousesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update house" do
-    patch house_url(@house), params: { house: { basement: @house.basement, current_owner: @house.current_owner, id: @house.id, list_price: @house.list_price, location: @house.location, num_of_floors: @house.num_of_floors, potential_buyers[]: @house.potential_buyers[], real_estate_company: @house.real_estate_company, realtor_contact: @house.realtor_contact, square_footage: @house.square_footage, style: @house.style, year_built: @house.year_built } }
+    patch house_url(@house), params: { house: { basement: @house.basement, company_id: @house.company_id, current_owner: @house.current_owner, house_id: @house.house_id, list_price: @house.list_price, location: @house.location, num_of_floors: @house.num_of_floors, potential_buyers: @house.potential_buyers, realtor_contact: @house.realtor_contact, square_footage: @house.square_footage, style: @house.style, year_built: @house.year_built } }
     assert_redirected_to house_url(@house)
   end
 

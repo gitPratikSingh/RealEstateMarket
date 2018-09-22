@@ -1,13 +1,13 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Id:</strong>
-  <%= @house.id %>
+  <strong>House:</strong>
+  <%= @house.house_id %>
 </p>
 
 <p>
-  <strong>Real estate company:</strong>
-  <%= @house.real_estate_company %>
+  <strong>Company:</strong>
+  <%= @house.company_id %>
 </p>
 
 <p>
@@ -56,8 +56,8 @@
 </p>
 
 <p>
-  <strong>Potential buyers[]:</strong>
-  <%= @house.potential_buyers[] %>
+  <strong>Potential buyers:</strong>
+  <%= @house.potential_buyers %>
 </p>
 
 <%= link_to 'Edit', edit_house_path(@house) %> |

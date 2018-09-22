@@ -15,13 +15,13 @@ class HousesTest < ApplicationSystemTestCase
     click_on "New House"
 
     fill_in "Basement", with: @house.basement
+    fill_in "Company", with: @house.company_id
     fill_in "Current Owner", with: @house.current_owner
-    fill_in "Id", with: @house.id
+    fill_in "House", with: @house.house_id
     fill_in "List Price", with: @house.list_price
     fill_in "Location", with: @house.location
     fill_in "Num Of Floors", with: @house.num_of_floors
-    fill_in "Potential Buyers[]", with: @house.potential_buyers[]
-    fill_in "Real Estate Company", with: @house.real_estate_company
+    fill_in "Potential Buyers", with: @house.potential_buyers
     fill_in "Realtor Contact", with: @house.realtor_contact
     fill_in "Square Footage", with: @house.square_footage
     fill_in "Style", with: @house.style
@@ -37,13 +37,13 @@ class HousesTest < ApplicationSystemTestCase
     click_on "Edit", match: :first
 
     fill_in "Basement", with: @house.basement
+    fill_in "Company", with: @house.company_id
     fill_in "Current Owner", with: @house.current_owner
-    fill_in "Id", with: @house.id
+    fill_in "House", with: @house.house_id
     fill_in "List Price", with: @house.list_price
     fill_in "Location", with: @house.location
     fill_in "Num Of Floors", with: @house.num_of_floors
-    fill_in "Potential Buyers[]", with: @house.potential_buyers[]
-    fill_in "Real Estate Company", with: @house.real_estate_company
+    fill_in "Potential Buyers", with: @house.potential_buyers
     fill_in "Realtor Contact", with: @house.realtor_contact
     fill_in "Square Footage", with: @house.square_footage
     fill_in "Style", with: @house.style
