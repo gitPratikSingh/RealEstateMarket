@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_09_22_212307) do
+ActiveRecord::Schema.define(version: 2018_09_22_225041) do
 
   create_table "house_hunters", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -65,6 +65,9 @@ ActiveRecord::Schema.define(version: 2018_09_22_212307) do
     t.datetime "remember_created_at"
     t.integer "user_type"
     t.string "phone"
+    t.integer "realtor_foreign_key"
+    t.integer "house_hunter_foreign_key"
+    t.integer "admin_foreign_key"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
