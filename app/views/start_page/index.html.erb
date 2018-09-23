@@ -5,8 +5,15 @@
   <h4>No Role Chosen!</h4>
   <table>
     <tr>
+      <% if current_user.realtor_foreign_key == -1%>
       <td><div><%= link_to "Make a Realtor Account", new_realtor_path%></div></td>
+      <% end %>
+      <% if current_user.house_hunter_foreign_key == -1 %>
       <td><div><%= link_to "Make a HouseHunter Account", new_house_hunter_path%></div></td>
+      <% end %>
+      <% if current_user.house_hunter_foreign_key != -1 %>
+      <td><div><%= link_to "Go to Your HouseHunter Profile", house_hunter_path%></div></td>
+      <% end %>
     </tr>
   </table>
 <% end %>
