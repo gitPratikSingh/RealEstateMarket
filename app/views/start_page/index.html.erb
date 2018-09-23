@@ -29,7 +29,9 @@
   <table>
     <tr>
       <td><div><%= link_to "View House Hunter Profile", house_hunter_path(current_user.house_hunter)%></div></td>
-      <td><div><%= link_to "New Inquiry", new_inquiry_path%></div></td>
+      <td><div><%= link_to "View All Real Estate Companies", real_state_companies_path %></div></td>
+      <td><div><%= link_to "View and Search All Houses", houses_path %></div></td>
+      <td><div><%= link_to "View My Inquiries", house_hunter_inquiries_path(current_user.house_hunter.id) %></div></td>
     </tr>
   </table>
 <% end %>

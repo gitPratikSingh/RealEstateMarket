@@ -3,12 +3,19 @@ Rails.application.routes.draw do
   get 'users/reset_user_type' => 'users#reset_user_type', as: 'reset_user_type'
   get 'house_hunters/set_user_type/:id' => 'house_hunters#set_user_type', as: 'set_type_house_hunter'
   resources :users
-  resources :inquiries
-  resources :houses
+
+  resources :houses do
+    resources :inquiries
+  end
+
   resources :realtors
   get 'start_page/index'
 
-  resources :house_hunters
+  resources :house_hunters do
+    resources :inquiries
+  end
+
+  resources :inquiries
   resources :realtor
 
   root 'start_page#index'

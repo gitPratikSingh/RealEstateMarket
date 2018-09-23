@@ -16,8 +16,6 @@
   <tbody>
     <% @inquiries.each do |inquiry| %>
       <tr>
-        <td><%= inquiry.inquiry_id %></td>
-        <td><%= inquiry.user_id %></td>
         <td><%= inquiry.subject %></td>
         <td><%= inquiry.message %></td>
         <td><%= link_to 'Show', inquiry %></td>
@@ -31,3 +29,5 @@
 <br>
 
 <%= link_to 'New Inquiry', new_inquiry_path %>
+<%= link_to 'Back', root_path %>
+
