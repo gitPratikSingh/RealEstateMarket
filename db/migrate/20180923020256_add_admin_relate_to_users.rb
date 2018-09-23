@@ -1,5 +1,5 @@
-class AddMoreRelateToUsers < ActiveRecord::Migration[5.2]
-def change
-    add_belongs_to :house_hunters, :users
+class AddAdminRelateToUsers < ActiveRecord::Migration[5.2]
+  def change
+    add_belongs_to :admins, :users
   end
 end

@@ -11,7 +11,7 @@ require 'database_cleaner'
 DatabaseCleaner.clean_with(:truncation)
 
 admin_list = [
-    [ "admin1@dm.com", "admin1_name", "admin1_password" ],
+    [ "admin1@dm.com", "admin1_name", "admin1@dm.com" ],
     [ "admin2@dm.com", "admin2_name", "admin2_password" ],
     [ "admin3@dm.com", "admin3_name", "admin3_password" ]
 ]

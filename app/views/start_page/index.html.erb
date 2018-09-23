@@ -33,8 +33,14 @@
 <!-- These are Admin Specific functions-->
 <% if current_user.user_type == 1 #admin type %>
   <h4>Administrator</h4>
+  <table>
+    <tr>
+      <td><div><%= link_to "Admin Home Page", admin_path(current_user)%></div></td>
+    </tr>
+  </table>
 <% end %>
-
+<br><br>
+<br><br>
 <!-- Need to be able to reset our user_identity-->
 <% if current_user.user_type != 0 %>
   <td><div><%= link_to "Stop Viewing as Any Role", reset_user_type_path %></div></td>

@@ -18,6 +18,8 @@ ActiveRecord::Schema.define(version: 2018_09_23_163928) do
     t.string "password"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "users_id"
+    t.index ["users_id"], name: "index_admins_on_users_id"
   end
 
   create_table "house_hunters", force: :cascade do |t|
