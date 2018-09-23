@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users, controllers: { registrations: 'users/registrations' }
+  get 'users/reset_user_type' => 'users#reset_user_type', as: 'reset_user_type'
+
   resources :users
   resources :inquiries
   resources :houses

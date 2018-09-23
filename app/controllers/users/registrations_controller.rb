@@ -43,14 +43,12 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   # If you have extra params to permit, append them to the sanitizer.
   def configure_sign_up_params
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:attribute, :name, :user_type, :phone, :realtor_foreign_key,
-                                                       :house_hunter_foreign_key,:admin_foreign_key])
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:attribute, :name, :user_type, :phone])
   end
 
   # If you have extra params to permit, append them to the sanitizer.
   def configure_account_update_params
-    devise_parameter_sanitizer.permit(:account_update, keys: [:attribute, :name, :user_type, :phone, :realtor_foreign_key,
-                                                              :house_hunter_foreign_key,:admin_foreign_key])
+    devise_parameter_sanitizer.permit(:account_update, keys: [:attribute, :name, :user_type, :phone])
   end
 
   # The path used after sign up.

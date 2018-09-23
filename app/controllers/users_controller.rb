@@ -2,6 +2,15 @@ class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
   before_action :set_admins
 
+  def reset_user_type
+    current_user.user_type = 0
+    respond_to do |format|
+      if current_user.save
+        format.html { redirect_to start_page_index_path, notice: 'No longer viewing as a user_type.' }
+      end
+    end
+  end
+
   # GET /users
   # GET /users.json
   def index

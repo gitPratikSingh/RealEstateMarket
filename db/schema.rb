@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_09_23_045229) do
+ActiveRecord::Schema.define(version: 2018_09_23_163928) do
 
   create_table "admins", force: :cascade do |t|
     t.string "email"
@@ -23,6 +23,14 @@ ActiveRecord::Schema.define(version: 2018_09_23_045229) do
   create_table "house_hunters", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "name"
+    t.string "email"
+    t.string "phone"
+    t.integer "preferred_contact"
+    t.integer "user_id"
+    t.integer "users_id"
+    t.index ["user_id"], name: "index_house_hunters_on_user_id"
+    t.index ["users_id"], name: "index_house_hunters_on_users_id"
   end
 
   create_table "houses", force: :cascade do |t|
@@ -86,9 +94,6 @@ ActiveRecord::Schema.define(version: 2018_09_23_045229) do
     t.datetime "remember_created_at"
     t.integer "user_type"
     t.string "phone"
-    t.integer "realtor_foreign_key"
-    t.integer "house_hunter_foreign_key"
-    t.integer "admin_foreign_key"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

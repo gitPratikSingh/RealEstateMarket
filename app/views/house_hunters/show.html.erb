@@ -1,5 +1,5 @@
 <p id="notice"><%= notice %></p>
-
+<%=  @house_hunter.inspect %>
 <p>
   <strong>Name:</strong>
   <%= @house_hunter.name %>
@@ -21,4 +21,4 @@
 </p>
 
 <%= link_to 'Edit', edit_house_hunter_path(@house_hunter) %> |
-<%= link_to 'Back', house_hunters_path %>
+<%= link_to 'Back', root_path %>

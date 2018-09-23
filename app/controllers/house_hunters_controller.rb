@@ -10,6 +10,11 @@ class HouseHuntersController < ApplicationController
   # GET /house_hunters/1
   # GET /house_hunters/1.json
   def show
+    puts 'we hit this'
+    if @house_hunter.user.user_type == 0
+      @house_hunter.user.user_type = 3 #this is the house_hunter id
+      @house_hunter.user.save
+    end
   end
 
   # GET /house_hunters/new
@@ -25,7 +30,7 @@ class HouseHuntersController < ApplicationController
   # POST /house_hunters.json
   def create
     @house_hunter = HouseHunter.new(house_hunter_params)
-
+    @house_hunter.user = current_user
     respond_to do |format|
       if @house_hunter.save
         format.html { redirect_to @house_hunter, notice: 'House hunter was successfully created.' }
@@ -42,7 +47,7 @@ class HouseHuntersController < ApplicationController
   def update
     respond_to do |format|
       if @house_hunter.update(house_hunter_params)
-        format.html { redirect_to @house_hunter, notice: 'House hunter was successfully updated.' }
+        format.html { redirect_to root_path, notice: 'House hunter was successfully updated.' }
         format.json { render :show, status: :ok, location: @house_hunter }
       else
         format.html { render :edit }
@@ -56,7 +61,7 @@ class HouseHuntersController < ApplicationController
   def destroy
     @house_hunter.destroy
     respond_to do |format|
-      format.html { redirect_to house_hunters_url, notice: 'House hunter was successfully destroyed.' }
+      format.html { redirect_to root_path, notice: 'House hunter was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
@@ -69,6 +74,6 @@ class HouseHuntersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def house_hunter_params
-      params.require(:house_hunter).permit(:name, :email, :password, :phone, :preferred_contact)
+      params.require(:house_hunter).permit(:name, :email, :password, :phone, :preferred_contact, :user)
     end
 end

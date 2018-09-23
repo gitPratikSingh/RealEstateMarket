@@ -31,6 +31,8 @@
     <%= select_tag(:preferred_contact, options_for_select([['E-mail', 1], ['Text', 2], ['Phone', 3]])) %>
   </div>
 
+  <%#= form.hidden_field :user, value: current_user %>
+
   <div class="actions">
     <%= form.submit %>
   </div>
