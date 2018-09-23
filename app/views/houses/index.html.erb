@@ -45,6 +45,8 @@
 </table>
 
 <br>
+<% if current_user.user_type == 2 || current_user.user_type == 1 #Allow Admins and Realtors to make houses%>
+  <%= link_to 'New House', new_house_path %>
+<% end %>
 
-<%= link_to 'New House', new_house_path %>
 <%= link_to 'Back', root_path %>

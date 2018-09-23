@@ -25,7 +25,7 @@ class InquiriesController < ApplicationController
   # POST /inquiries.json
   def create
     @inquiry = Inquiry.new(inquiry_params)
-
+    @inquiry.house_hunter = current_user.house_hunter
     respond_to do |format|
       if @inquiry.save
         format.html { redirect_to @inquiry, notice: 'Inquiry was successfully created.' }
@@ -69,6 +69,6 @@ class InquiriesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def inquiry_params
-      params.require(:inquiry).permit(:inquiry_id, :user_id, :subject, :message)
+      params.require(:inquiry).permit(:subject, :message)
     end
 end
