@@ -1,5 +1,14 @@
 class HouseHuntersController < ApplicationController
-  before_action :set_house_hunter, only: [:show, :edit, :update, :destroy]
+  before_action :set_house_hunter, only: [:show, :edit, :update, :destroy, :set_user_type]
+
+  def set_user_type
+    @house_hunter.user.user_type = 3
+    respond_to do |format|
+      if @house_hunter.user.save
+        format.html { redirect_to start_page_index_path, notice: 'Now viewing as a House Hunter.' }
+      end
+    end
+  end
 
   # GET /house_hunters
   # GET /house_hunters.json
@@ -10,11 +19,7 @@ class HouseHuntersController < ApplicationController
   # GET /house_hunters/1
   # GET /house_hunters/1.json
   def show
-    puts 'we hit this'
-    if @house_hunter.user.user_type == 0
-      @house_hunter.user.user_type = 3 #this is the house_hunter id
-      @house_hunter.user.save
-    end
+
   end
 
   # GET /house_hunters/new
