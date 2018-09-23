@@ -14,7 +14,7 @@
       <td><div><%= link_to "Make a HouseHunter Account", new_house_hunter_path%></div></td>
       <% end %>
       <% if current_user.house_hunter != nil %>
-      <td><div><%= link_to "Go to Your HouseHunter Profile", house_hunter_path(current_user.house_hunter)%></div></td>
+      <td><div><%= link_to "Go to Your HouseHunter Profile",  set_type_house_hunter_path(current_user.house_hunter.id) %></div></td>
       <% end %>
     </tr>
   </table>
@@ -25,6 +25,7 @@
   <h4>House_Hunter</h4>
   <table>
     <tr>
+      <td><div><%= link_to "View House Hunter Profile", house_hunter_path(current_user.house_hunter)%></div></td>
       <td><div><%= link_to "New Inquiry", new_inquiry_path%></div></td>
     </tr>
   </table>
