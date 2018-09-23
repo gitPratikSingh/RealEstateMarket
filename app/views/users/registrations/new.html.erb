@@ -31,6 +31,11 @@
     <%= f.text_field :phone, autocomplete: "off" %>
   </div>
 
+  <%= f.hidden_field :user_type, value: 0 %>
+  <%= f.hidden_field :realtor_foreign_key, value: -1 %>
+  <%= f.hidden_field :house_hunter_foreign_key, value: -1 %>
+  <%= f.hidden_field :admin_foreign_key, value: -1 %>
+
   <div class="actions">
     <%= f.submit "Sign up" %>
   </div>
