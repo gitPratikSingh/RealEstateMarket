@@ -5,7 +5,10 @@ class AdminsController < ApplicationController
   end
 
   def create
-    @admin = Admin.new(params.require(:admin).permit(:email,:name,:password))
+    @admin = Admin.new
+
+    @admin.name = current_user.name
+    @admin.email = current_user.email
     @admin.user = current_user
 
     if @admin.save
@@ -17,12 +20,6 @@ class AdminsController < ApplicationController
 
   def show
     @admin = Admin.find(params['id'])
-
-    if @admin.user.user_type == 0
-      @admin.user.user_type = 1
-      @admin.user.save
-    end
-
   end
 
   def index
@@ -36,7 +33,7 @@ class AdminsController < ApplicationController
   def update
     @admin = Admin.find(params['id'])
 
-    if @admin.update(params.require(:admin).permit(:email,:name,:password))
+    if @admin.update(params.require(:admin).permit(:email,:name))
       redirect_to @admin
     else
       render 'edit'

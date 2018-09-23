@@ -37,6 +37,7 @@ class RealStateCompaniesController < ApplicationController
   end
 
   def destroy
+    @realStateCompany =RealStateCompany.find(params['id'])
     @realStateCompany.destroy
     respond_to do |format|
       format.html { redirect_to real_state_companies_url, notice: 'Real State Company was successfully destroyed.' }

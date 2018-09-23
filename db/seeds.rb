@@ -17,6 +17,6 @@ admin_list = [
 ]
 
 admin_list.each do |email, name, password|
-  Admin.create( email: email, name: name, password: password )
+  Admin.create( email: email, name: name )
   User.create( email: email, name: name, password: password, user_type: 1 )
 end

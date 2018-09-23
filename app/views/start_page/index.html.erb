@@ -16,12 +16,15 @@
       <% if current_user.house_hunter != nil %>
       <td><div><%= link_to "Go to Your HouseHunter Profile",  set_type_house_hunter_path(current_user.house_hunter.id) %></div></td>
       <% end %>
+      <% if current_user.admin == nil %>
+        <td><div><%= link_to "Make an Admin Account", new_admin_path%></div></td>
+      <% end %>
     </tr>
   </table>
 <% end %>
 
 <!-- These are House_Hunter Specific functions -->
-<% if current_user.user_type == 3 || current_user.user_type == 1 #House Hunter or Admin check%>
+<% if current_user.user_type == 3 #|| current_user.user_type == 1 #House Hunter or Admin check%>
   <h4>House_Hunter</h4>
   <table>
     <tr>
