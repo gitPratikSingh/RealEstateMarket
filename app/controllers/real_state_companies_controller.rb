@@ -4,7 +4,7 @@ class RealStateCompaniesController < ApplicationController
   end
 
   def create
-    @realStateCompany = RealStateCompany.new(params.require(:RealStateCompany).permit(:name, :website, :address, :size, :founding_year, :revenue, :synopsis))
+    @realStateCompany = RealStateCompany.new(params.require(:real_state_companies).permit(:name, :website, :address, :size, :founding_year, :revenue, :synopsis))
     if @realStateCompany.save
       redirect_to @realStateCompany
     else
@@ -13,7 +13,7 @@ class RealStateCompaniesController < ApplicationController
   end
 
   def show
-    @realStateCompany = RealStateCompany.find(params['email'])
+    @realStateCompany = RealStateCompany.find(params['id'])
   end
 
   def index
@@ -27,7 +27,7 @@ class RealStateCompaniesController < ApplicationController
   def update
     @realStateCompany = RealStateCompany.find(params['id'])
 
-    if @realStateCompany.update(params.require(:RealStateCompany).permit(:name,:website,:address,
+    if @realStateCompany.update(params.require(:real_state_company).permit(:name,:website,:address,
                                                                          :size,:founding_year,:revenue,
                                                                          :synopsis))
       redirect_to @realStateCompany
