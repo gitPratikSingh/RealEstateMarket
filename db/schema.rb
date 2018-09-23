@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_09_23_211243) do
+ActiveRecord::Schema.define(version: 2018_09_23_234616) do
 
   create_table "admins", force: :cascade do |t|
     t.string "email"
@@ -35,8 +35,6 @@ ActiveRecord::Schema.define(version: 2018_09_23_211243) do
   end
 
   create_table "houses", force: :cascade do |t|
-    t.integer "house_id"
-    t.integer "company_id"
     t.string "location"
     t.integer "square_footage"
     t.integer "year_built"
@@ -45,10 +43,12 @@ ActiveRecord::Schema.define(version: 2018_09_23_211243) do
     t.integer "num_of_floors"
     t.boolean "basement"
     t.string "current_owner"
-    t.string "realtor_contact"
-    t.string "potential_buyers"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "real_estate_companies_id"
+    t.integer "realtor_id"
+    t.index ["real_estate_companies_id"], name: "index_houses_on_real_estate_companies_id"
+    t.index ["realtor_id"], name: "index_houses_on_realtor_id"
   end
 
   create_table "inquiries", force: :cascade do |t|
@@ -62,17 +62,16 @@ ActiveRecord::Schema.define(version: 2018_09_23_211243) do
     t.index ["house_id"], name: "index_inquiries_on_house_id"
   end
 
-  create_table "real_state_companies", force: :cascade do |t|
-    t.integer "real_state_company_id"
+  create_table "real_estate_companies", force: :cascade do |t|
     t.string "name"
     t.string "website"
     t.string "address"
     t.integer "size"
-    t.integer "founding_year"
+    t.integer "founded"
     t.integer "revenue"
-    t.string "synopsis"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.text "synopsis"
   end
 
   create_table "realtors", force: :cascade do |t|
@@ -80,9 +79,12 @@ ActiveRecord::Schema.define(version: 2018_09_23_211243) do
     t.string "password"
     t.string "full_name"
     t.string "phone"
-    t.integer "company_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "user_id"
+    t.integer "real_estate_companies_id"
+    t.index ["real_estate_companies_id"], name: "index_realtors_on_real_estate_companies_id"
+    t.index ["user_id"], name: "index_realtors_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
