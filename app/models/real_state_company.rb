@@ -1,0 +1,2 @@
+class RealStateCompany < ApplicationRecord
+end

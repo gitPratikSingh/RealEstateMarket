@@ -1,0 +1,24 @@
+<h1> List of Real State Companies</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Website</th>
+    <th>Address</th>
+    <th>Size</th>
+  </tr>
+
+  <% @realStateCompany.each do |realstatecompany| %>
+    <tr>
+      <td><%= realstatecompany.name %></td>
+      <td><%= realstatecompany.website %></td>
+      <td><%= realstatecompany.address %></td>
+      <td><%= realstatecompany.size %></td>
+      <td><%= link_to 'Show', real_state_company_path(realstatecompany) %></td>
+      <td><%= link_to 'Edit', edit_real_state_company_path(realstatecompany) %></td>
+      <td><%= link_to 'Destroy', real_state_company_path(realstatecompany),
+                      method: :delete,
+                      data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+  <% end %>
+</table>
