@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
+  before_action :set_admins
 
   # GET /users
   # GET /users.json
@@ -70,5 +71,14 @@ class UsersController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
       params.require(:user).permit(:email, :name, :password)
+    end
+
+    def set_admins
+      @admins = Admin.all
+      @SuperUsers = Hash.new
+
+      @admins.each do |admin|
+        @SuperUsers[admin.email] = 1
+      end
     end
 end

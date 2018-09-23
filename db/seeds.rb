@@ -5,3 +5,15 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+
+admin_list = [
+    [ "admin1@dm.com", "admin1_name", "admin1_password" ],
+    [ "admin2@dm.com", "admin2_name", "admin2_password" ],
+    [ "admin3@dm.com", "admin3_name", "admin3_password" ]
+]
+
+admin_list.each do |email, name, password|
+  Admin.create( email: email, name: name, password: password )
+  User.create( email: email, name: name, password: password )
+end
