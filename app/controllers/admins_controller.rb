@@ -1,5 +1,9 @@
 class AdminsController < ApplicationController
 
+  before_action do
+      render :file => "public/401", :status => :unauthorized unless current_user && current_user.admin
+  end
+
   def new
     @admin = Admin.new
   end
