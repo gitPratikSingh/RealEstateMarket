@@ -1,6 +1,15 @@
 class RealtorsController < ApplicationController
   before_action :set_realtor, only: [:show, :edit, :update, :destroy]
 
+  def set_user_type
+    @realtor.user.user_type = 2
+    respond_to do |format|
+      if @realtor.user.save
+        format.html { redirect_to start_page_index_path, notice: 'Now viewing as a Realtor.' }
+      end
+    end
+  end
+
   # GET /realtors
   # GET /realtors.json
   def index
@@ -25,7 +34,7 @@ class RealtorsController < ApplicationController
   # POST /realtors.json
   def create
     @realtor = Realtor.new(realtor_params)
-
+    @realtor.user = current_user
     respond_to do |format|
       if @realtor.save
         format.html { redirect_to @realtor, notice: 'Realtor was successfully created.' }
@@ -69,6 +78,6 @@ class RealtorsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def realtor_params
-      params.require(:realtor).permit(:email, :password, :full_name, :phone, :company_id)
+      params.require(:realtor).permit(:email, :password, :full_name, :phone)
     end
 end

@@ -1,0 +1,25 @@
+<h1>Show Real State Company</h1>
+
+<p>
+  <strong>Id:</strong>
+  <%= @real_estate_company.real_state_company_id  %><br>
+</p>
+
+<p>
+  <strong>Author:</strong>
+  <%= @real_estate_company.name  %><br>
+</p>
+
+<p>
+  <strong>Text:</strong>
+  <%= @real_estate_company.website  %><br>
+</p>
+
+<p>
+  <strong>Time:</strong>
+  <%= @real_estate_company.address  %><br>
+</p>
+
+
+<%= link_to 'Edit', edit_realEstateCompany_path(@real_estate_company) %> |
+<%= link_to 'Back', realEstateCompanies_path %>
