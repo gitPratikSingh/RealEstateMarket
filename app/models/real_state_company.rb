@@ -1,2 +1,0 @@
-class RealStateCompany < ApplicationRecord
-end

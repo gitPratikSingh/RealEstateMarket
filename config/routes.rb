@@ -21,6 +21,6 @@ Rails.application.routes.draw do
   root 'start_page#index'
 
   resources :admins
-  resources :real_state_companies
+  resources :real_estate_companies
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
