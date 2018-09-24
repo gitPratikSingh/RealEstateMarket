@@ -8,15 +8,15 @@
     <th>Size</th>
   </tr>
 
-  <% @real_estate_company.each do |realstatecompany| %>
+  <% @realEstateCompanies.each do |realestatecompany| %>
     <tr>
-      <td><%= realstatecompany.name %></td>
-      <td><%= realstatecompany.website %></td>
-      <td><%= realstatecompany.address %></td>
-      <td><%= realstatecompany.size %></td>
-      <td><%= link_to 'Show', realEstateCompany_path(realstatecompany) %></td>
-      <td><%= link_to 'Edit', edit_realEstateCompany_path(realstatecompany) %></td>
-      <td><%= link_to 'Destroy', realEstateCompany_path(realstatecompany),
+      <td><%= realestatecompany.name %></td>
+      <td><%= realestatecompany.website %></td>
+      <td><%= realestatecompany.address %></td>
+      <td><%= realestatecompany.size %></td>
+      <td><%= link_to 'Show', real_estate_company_path(realestatecompany) %></td>
+      <td><%= link_to 'Edit', edit_real_estate_company_path(realestatecompany) %></td>
+      <td><%= link_to 'Destroy', real_estate_company_path(realestatecompany),
                       method: :delete,
                       data: { confirm: 'Are you sure?' } %></td>
     </tr>

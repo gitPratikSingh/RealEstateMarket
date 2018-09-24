@@ -2,24 +2,44 @@
 
 <p>
   <strong>Id:</strong>
-  <%= @real_estate_company.real_state_company_id  %><br>
+  <%= @realEstateCompany.id  %><br>
 </p>
 
 <p>
-  <strong>Author:</strong>
-  <%= @real_estate_company.name  %><br>
+  <strong>Name:</strong>
+  <%= @realEstateCompany.name  %><br>
 </p>
 
 <p>
-  <strong>Text:</strong>
-  <%= @real_estate_company.website  %><br>
+  <strong>Website:</strong>
+  <%= @realEstateCompany.website  %><br>
 </p>
 
 <p>
-  <strong>Time:</strong>
-  <%= @real_estate_company.address  %><br>
+  <strong>Address:</strong>
+  <%= @realEstateCompany.address  %><br>
+</p>
+
+<p>
+  <strong>Size:</strong>
+  <%= @realEstateCompany.size  %><br>
 </p>
 
 
-<%= link_to 'Edit', edit_realEstateCompany_path(@real_estate_company) %> |
-<%= link_to 'Back', realEstateCompanies_path %>
+<p>
+  <strong>founded:</strong>
+  <%= @realEstateCompany.founded  %><br>
+</p>
+
+<p>
+  <strong>revenue:</strong>
+  <%= @realEstateCompany.revenue  %><br>
+</p>
+
+<p>
+  <strong>synopsis:</strong>
+  <%= @realEstateCompany.synopsis  %><br>
+</p>
+
+<%= link_to 'Edit', edit_real_estate_company_path(@realEstateCompany) %> |
+<%= link_to 'Back', real_estate_companies_path %>

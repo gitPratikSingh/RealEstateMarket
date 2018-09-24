@@ -1,6 +1,6 @@
 <h1>Edit Real State Company</h1>
 
-<%= form_for @real_estate_company, url: realEstateCompany_path do |f| %>
+<%= form_for @realEstateCompany, url: real_estate_company_path do |f| %>
   <p>
     <%= f.label :name  %><br>
     <%= f.text_field :name  %><br>
@@ -22,10 +22,25 @@
   </p>
 
   <p>
+    <%= f.label :founded  %><br>
+    <%= f.text_field :founded  %><br>
+  </p>
+
+  <p>
+    <%= f.label :revenue  %><br>
+    <%= f.text_field :revenue  %><br>
+  </p>
+
+  <p>
+    <%= f.label :synopsis  %><br>
+    <%= f.text_field :synopsis  %><br>
+  </p>
+
+  <p>
   <p>
     <%= f.submit %>
   </p>
 
 <% end %>
 
-<%= link_to 'Back', realEstateCompany_path %>
+<%= link_to 'Back', real_estate_company_path %>

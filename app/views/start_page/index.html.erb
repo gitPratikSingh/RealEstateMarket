@@ -22,9 +22,6 @@
       <% if current_user.realtor != nil %>
         <td><div><%= link_to "Go to Your Realtor Profile",  set_type_realtor_path(current_user.realtor.id) %></div></td>
       <% end %>
-      <% if current_user.admin == nil %>
-        <td><div><%= link_to "Make an Admin Account", new_admin_path%></div></td>
-      <% end %>
     </tr>
   </table>
 <% end %>
