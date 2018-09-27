@@ -17,11 +17,6 @@
   </div>
 
   <div class="field">
-    <%= form.label :email %>
-    <%= form.text_field :email %>
-  </div>
-
-  <div class="field">
     <%= form.label :phone %>
     <%= form.text_field :phone %>
   </div>
@@ -31,7 +26,12 @@
     <%= select_tag(:preferred_contact, options_for_select([['E-mail', 1], ['Text', 2], ['Phone', 3]])) %>
   </div>
 
-  <%#= form.hidden_field :user, value: current_user %>
+  <% if current_user.user_type == 1 #admin type %>
+    <div class="field">
+      <%= form.label :user %>
+      <%= form.collection_select(:user_id, User.all, :id, :name) %>
+    </div>
+  <% end %>
 
   <div class="actions">
     <%= form.submit %>

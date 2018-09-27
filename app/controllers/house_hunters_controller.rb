@@ -35,7 +35,11 @@ class HouseHuntersController < ApplicationController
   # POST /house_hunters.json
   def create
     @house_hunter = HouseHunter.new(house_hunter_params)
-    @house_hunter.user = current_user
+    if current_user.user_type != 1
+      @house_hunter.user = current_user
+    else
+      @house_hunter.user = User.find(house_hunter_params[:user_id])
+    end
     respond_to do |format|
       if @house_hunter.save
         format.html { redirect_to @house_hunter, notice: 'House hunter was successfully created.' }
@@ -79,6 +83,6 @@ class HouseHuntersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def house_hunter_params
-      params.require(:house_hunter).permit(:name, :email, :password, :phone, :preferred_contact, :user)
+      params.require(:house_hunter).permit(:name, :phone, :preferred_contact, :user_id)
     end
 end

@@ -5,8 +5,6 @@
 <table>
   <thead>
     <tr>
-      <th>Email</th>
-      <th>Password</th>
       <th>Full name</th>
       <th>Phone</th>
       <th>Company</th>
@@ -17,11 +15,17 @@
   <tbody>
     <% @realtors.each do |realtor| %>
       <tr>
-        <td><%= realtor.email %></td>
-        <td><%= realtor.password %></td>
         <td><%= realtor.full_name %></td>
         <td><%= realtor.phone %></td>
-        <td><%= realtor.company_id %></td>
+        <% if realtor != nil  %>
+          <% if realtor.real_estate_companies_id != nil %>
+          <td> <%= realtor.real_estate_companies_id %> </td>
+            <% end %>
+          <% if realtor.real_estate_companies_id == nil %>
+            <td> No Company Assigned </td>
+          <% end %>
+        <% end %>
+
         <td><%= link_to 'Show', realtor %></td>
         <td><%= link_to 'Edit', edit_realtor_path(realtor) %></td>
         <td><%= link_to 'Destroy', realtor, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -33,3 +37,4 @@
 <br>
 
 <%= link_to 'New Realtor', new_realtor_path %>
+<%= link_to 'Back to Home', root_path %>

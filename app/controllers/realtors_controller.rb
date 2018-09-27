@@ -1,5 +1,5 @@
 class RealtorsController < ApplicationController
-  before_action :set_realtor, only: [:show, :edit, :update, :destroy]
+  before_action :set_realtor, only: [:show, :edit, :update, :destroy, :set_user_type]
 
   def set_user_type
     @realtor.user.user_type = 2
@@ -34,7 +34,11 @@ class RealtorsController < ApplicationController
   # POST /realtors.json
   def create
     @realtor = Realtor.new(realtor_params)
-    @realtor.user = current_user
+    if (current_user.user_type != 1) #We do not want admins to automatically bind created users to account.
+      @realtor.user = current_user
+    else
+      @realtor.user = User.find(realtor_params[:user_id])
+    end
     respond_to do |format|
       if @realtor.save
         format.html { redirect_to @realtor, notice: 'Realtor was successfully created.' }
@@ -78,6 +82,6 @@ class RealtorsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def realtor_params
-      params.require(:realtor).permit(:email, :password, :full_name, :phone)
+      params.require(:realtor).permit(:full_name, :phone, :user, :real_estate_companies_id, :user_id)
     end
 end

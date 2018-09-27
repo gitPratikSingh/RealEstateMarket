@@ -11,17 +11,26 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :house_id %>
-    <%= form.number_field :house_id %>
-  </div>
 
   <div class="field">
-    <%= form.label :company_id %>
-    <%= form.number_field :company_id %>
+    <%= form.label :real_estate_companies_id %>
+    <%= form.collection_select(:real_estate_companies_id, RealEstateCompany.all, :id, :name) %>
   </div>
 
-  <div class="field">
+  <% if current_user.user_type == 1 #admin type %>
+    <div class="field">
+      <%= form.label :realtor_contact %>
+      <%= form.collection_select(:realtor_contact, Realtor.all, :phone, :name) %>
+    </div>
+  <% end %>
+  <% if current_user.user_type == 2 #realtor type %>
+    <div class="field">
+      <%= form.label :realtor_contact %>
+      <%= form.collection_select(:realtor_contact, current_user.realtor, :phone, :name) %>
+    </div>
+  <% end %>
+
+    <div class="field">
     <%= form.label :location %>
     <%= form.text_field :location %>
   </div>
@@ -59,11 +68,6 @@
   <div class="field">
     <%= form.label :current_owner %>
     <%= form.text_field :current_owner %>
-  </div>
-
-  <div class="field">
-    <%= form.label :realtor_contact %>
-    <%= form.text_field :realtor_contact %>
   </div>
 
   <div class="field">

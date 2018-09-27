@@ -1,7 +1,17 @@
 class AdminsController < ApplicationController
 
+  before_action :set_admin, only: [:set_user_type]
   before_action do
       render :file => "public/401", :status => :unauthorized unless current_user && current_user.admin
+  end
+
+  def set_user_type
+    @admin.user.user_type = 1
+    respond_to do |format|
+      if @admin.user.save
+        format.html { redirect_to start_page_index_path, notice: 'Now viewing as an Admin.' }
+      end
+    end
   end
 
   def new
@@ -42,6 +52,14 @@ class AdminsController < ApplicationController
     else
       render 'edit'
     end
+  end
+
+
+
+  private
+  # Use callbacks to share common setup or constraints between actions.
+  def set_admin
+    @admin = Admin.find(params[:id])
   end
 
 end
