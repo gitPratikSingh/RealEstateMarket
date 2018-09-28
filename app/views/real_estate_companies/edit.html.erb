@@ -1,6 +1,19 @@
 <h1>Edit Real State Company</h1>
 
 <%= form_for @realEstateCompany, url: real_estate_company_path do |f| %>
+
+  <% if @realEstateCompany.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@realEstateCompany.errors.count, "error") %> prohibited this Real Estate Company from being saved:</h2>
+
+      <ul>
+        <% @realEstateCompany.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
   <p>
     <%= f.label :name  %><br>
     <%= f.text_field :name  %><br>

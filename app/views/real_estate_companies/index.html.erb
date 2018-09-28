@@ -6,6 +6,10 @@
     <th>Website</th>
     <th>Address</th>
     <th>Size</th>
+    <th>founded</th>
+    <th>revenue</th>
+    <th>synopsis</th>
+    <th>createdAt</th>
   </tr>
 
   <% @realEstateCompanies.each do |realestatecompany| %>
@@ -14,7 +18,11 @@
       <td><%= realestatecompany.website %></td>
       <td><%= realestatecompany.address %></td>
       <td><%= realestatecompany.size %></td>
-      <td><%= link_to 'Show', real_estate_company_path(realestatecompany) %></td>
+      <td><%= realestatecompany.founded %></td>
+      <td><%= realestatecompany.revenue %></td>
+      <td><%= realestatecompany.synopsis %></td>
+      <td><%= realestatecompany.created_at.strftime(('%v')) %></td>
+
       <td><%= link_to 'Edit', edit_real_estate_company_path(realestatecompany) %></td>
       <td><%= link_to 'Destroy', real_estate_company_path(realestatecompany),
                       method: :delete,
@@ -22,4 +30,6 @@
     </tr>
   <% end %>
 </table>
+
+<%= link_to 'Back', admin_path(current_user) %>
 <%= link_to 'Back to Home', root_path %>

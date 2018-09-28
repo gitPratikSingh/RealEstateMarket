@@ -1,17 +1,17 @@
-<h1>Admin Homepage</h1>
+<div>
+<h1 style="text-align:center;">Admin Homepage</h1>
+
+  <div>
+    <strong>Name:</strong>
+    <%= @admin.user.name  %><br>
+  </div>
+</div>
 
 <p>
-  <strong>Name:</strong>
-  <%= @admin.user.name  %><br>
-</p>
-
-<%= link_to 'Edit Profile', edit_user_path(@admin) %>
-
+<strong>Actions: </strong>
 <table>
-  <tr>
-    <th>Actions</th>
-  </tr>
 
+  <tr><td><%= link_to 'editProfile', edit_user_path(@admin) %></td></tr>
   <tr><td><%= link_to 'createHouseHunter', new_house_hunter_path %></td></tr>
   <tr><td><%= link_to 'createRealtor', new_realtor_path %></td></tr>
   <tr><td><%= link_to 'createRealEstateCompany', new_real_estate_company_path %></td></tr>
@@ -19,6 +19,13 @@
   <tr><td><%= link_to 'viewAllUsers', users_path%></td></tr>
   <tr><td><%= link_to 'viewAllHouses', houses_path%></td></tr>
   <tr><td><%= link_to 'viewAllInquiries', inquiries_path%></td></tr>
+  <tr><td><%= link_to 'viewAllRealEstateCompanies', real_estate_companies_path%></td></tr>
+  <tr><td></td></tr>
 
 </table>
+
+
+
+<p>
+
 <%= link_to 'Back to Home', root_path %>
