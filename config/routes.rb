@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   end
 
   resources :realtors
-  get 'start_page/index'
+
 
   resources :house_hunters do
     resources :inquiries
@@ -23,6 +23,7 @@ Rails.application.routes.draw do
 
   resources :inquiries
 
+  get 'start_page/index'
   root 'start_page#index'
 
   resources :admins
