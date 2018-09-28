@@ -1,0 +1,22 @@
+<%= form_with(model: interest_list, local: true) do |form| %>
+  <% if interest_list.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(interest_list.errors.count, "error") %> prohibited this interest_list from being saved:</h2>
+
+      <ul>
+      <% interest_list.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :house_hunter_id %>
+    <%= form.text_field :house_hunter_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

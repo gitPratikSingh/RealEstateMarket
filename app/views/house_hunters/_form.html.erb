@@ -12,18 +12,8 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
-  </div>
-
-  <div class="field">
-    <%= form.label :phone %>
-    <%= form.text_field :phone %>
-  </div>
-
-  <div class="field">
     <%= form.label :preferred_contact %>
-    <%= select_tag(:preferred_contact, options_for_select([['E-mail', 1], ['Text', 2], ['Phone', 3]])) %>
+    <%= form.select(:preferred_contact, options_for_select([['E-mail', 1], ['Text', 2], ['Phone', 3]])) %>
   </div>
 
   <% if current_user.user_type == 1 #admin type %>

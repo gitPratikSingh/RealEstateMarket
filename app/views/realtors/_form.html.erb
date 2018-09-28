@@ -12,18 +12,8 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :full_name %>
-    <%= form.text_field :full_name %>
-  </div>
-
-  <div class="field">
-    <%= form.label :phone %>
-    <%= form.text_field :phone %>
-  </div>
-
-  <div class="field">
-    <%= form.label :real_estate_companies_id %>
-    <%= form.collection_select(:real_estate_companies_id, RealEstateCompany.all, :id, :name, :include_blank => true) %>
+    <%= form.label :real_estate_company_id %>
+    <%= form.collection_select(:real_estate_company_id, RealEstateCompany.all, :id, :name, :include_blank => true) %>
   </div>
 
   <% if current_user.user_type == 1 #admin type %>

@@ -40,6 +40,7 @@ class HouseHuntersController < ApplicationController
     else
       @house_hunter.user = User.find(house_hunter_params[:user_id])
     end
+    @house_hunter.interest_list = InterestList.new(@house_hunter.id)
     respond_to do |format|
       if @house_hunter.save
         format.html { redirect_to @house_hunter, notice: 'House hunter was successfully created.' }
@@ -83,6 +84,6 @@ class HouseHuntersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def house_hunter_params
-      params.require(:house_hunter).permit(:name, :phone, :preferred_contact, :user_id)
+      params.require(:house_hunter).permit(:preferred_contact, :user_id)
     end
 end

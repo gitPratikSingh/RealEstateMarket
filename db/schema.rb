@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_09_27_160016) do
+ActiveRecord::Schema.define(version: 2018_09_28_021104) do
 
   create_table "admins", force: :cascade do |t|
     t.string "email"
@@ -24,8 +24,6 @@ ActiveRecord::Schema.define(version: 2018_09_27_160016) do
   create_table "house_hunters", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "name"
-    t.string "phone"
     t.integer "preferred_contact"
     t.integer "user_id"
     t.index ["user_id"], name: "index_house_hunters_on_user_id"
@@ -58,6 +56,13 @@ ActiveRecord::Schema.define(version: 2018_09_27_160016) do
     t.index ["house_id"], name: "index_inquiries_on_house_id"
   end
 
+  create_table "interest_lists", force: :cascade do |t|
+    t.integer "house_hunter_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["house_hunter_id"], name: "index_interest_lists_on_house_hunter_id"
+  end
+
   create_table "real_estate_companies", force: :cascade do |t|
     t.string "name"
     t.string "website"
@@ -71,13 +76,11 @@ ActiveRecord::Schema.define(version: 2018_09_27_160016) do
   end
 
   create_table "realtors", force: :cascade do |t|
-    t.string "full_name"
-    t.string "phone"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "user_id"
-    t.integer "real_estate_companies_id"
-    t.index ["real_estate_companies_id"], name: "index_realtors_on_real_estate_companies_id"
+    t.integer "real_estate_company_id"
+    t.index ["real_estate_company_id"], name: "index_realtors_on_real_estate_company_id"
     t.index ["user_id"], name: "index_realtors_on_user_id"
   end
 

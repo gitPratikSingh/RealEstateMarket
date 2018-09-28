@@ -1,0 +1,2 @@
+module InterestListsHelper
+end

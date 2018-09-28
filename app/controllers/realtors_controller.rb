@@ -34,6 +34,7 @@ class RealtorsController < ApplicationController
   # POST /realtors.json
   def create
     @realtor = Realtor.new(realtor_params)
+
     if (current_user.user_type != 1) #We do not want admins to automatically bind created users to account.
       @realtor.user = current_user
     else
@@ -53,6 +54,7 @@ class RealtorsController < ApplicationController
   # PATCH/PUT /realtors/1
   # PATCH/PUT /realtors/1.json
   def update
+
     respond_to do |format|
       if @realtor.update(realtor_params)
         format.html { redirect_to @realtor, notice: 'Realtor was successfully updated.' }
@@ -82,6 +84,6 @@ class RealtorsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def realtor_params
-      params.require(:realtor).permit(:full_name, :phone, :user, :real_estate_companies_id, :user_id)
+      params.require(:realtor).permit(:full_name, :phone, :user, :real_estate_company_id, :user_id)
     end
 end

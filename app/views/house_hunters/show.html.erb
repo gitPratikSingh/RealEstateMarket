@@ -2,12 +2,17 @@
 <%=  @house_hunter.inspect %>
 <p>
   <strong>Name:</strong>
-  <%= @house_hunter.name %>
+  <%= @house_hunter.user.name %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @house_hunter.user.email %>
 </p>
 
 <p>
   <strong>Phone:</strong>
-  <%= @house_hunter.phone %>
+  <%= @house_hunter.user.phone %>
 </p>
 
 <p>
