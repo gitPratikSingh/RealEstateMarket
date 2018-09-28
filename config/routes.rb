@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :interest_lists
   devise_for :users, controllers: { registrations: 'users/registrations' }
   get 'users/reset_user_type' => 'users#reset_user_type', as: 'reset_user_type'
   get 'house_hunters/set_user_type/:id' => 'house_hunters#set_user_type', as: 'set_type_house_hunter'
@@ -16,9 +17,11 @@ Rails.application.routes.draw do
   resources :house_hunters do
     resources :inquiries
   end
+  resources :house_hunters do
+    resources :interest_lists
+  end
 
   resources :inquiries
-  resources :realtor
 
   root 'start_page#index'
 

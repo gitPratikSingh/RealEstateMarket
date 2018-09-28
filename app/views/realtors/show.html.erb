@@ -1,21 +1,26 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Full name:</strong>
-  <%= @realtor.full_name %>
+  <strong>Name:</strong>
+  <%= @realtor.user.name %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @realtor.user.email %>
 </p>
 
 <p>
   <strong>Phone:</strong>
-  <%= @realtor.phone %>
+  <%= @realtor.user.phone %>
 </p>
 
 <p>
   <strong>Company:</strong>
-  <% if @realtor.real_estate_companies_id != nil  %>
-  <%= @realtor.real_estate_companies_id %>
+  <% if @realtor.real_estate_company != nil  %>
+  <%= @realtor.real_estate_company.name %>
   <% end %>
-  <% if @realtor.real_estate_companies_id == nil %>
+  <% if @realtor.real_estate_company == nil %>
   No Company Assigned
   <% end %>
 </p>

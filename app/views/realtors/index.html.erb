@@ -5,27 +5,25 @@
 <table>
   <thead>
     <tr>
-      <th>Full name</th>
+      <th>Name</th>
+      <th>Email</th>
       <th>Phone</th>
-      <th>Company</th>
-      <th colspan="3"></th>
+      <th>Real Estate Company</th>
     </tr>
   </thead>
 
   <tbody>
     <% @realtors.each do |realtor| %>
       <tr>
-        <td><%= realtor.full_name %></td>
-        <td><%= realtor.phone %></td>
-        <% if realtor != nil  %>
-          <% if realtor.real_estate_companies_id != nil %>
-          <td> <%= realtor.real_estate_companies_id %> </td>
-            <% end %>
-          <% if realtor.real_estate_companies_id == nil %>
-            <td> No Company Assigned </td>
-          <% end %>
+        <td><%= realtor.user.name %></td>
+        <td><%= realtor.user.email %></td>
+        <td><%= realtor.user.phone %></td>
+        <% if realtor.real_estate_company_id != nil %>
+          <td> <%= realtor.real_estate_company.name %> </td>
         <% end %>
-
+        <% if realtor.real_estate_company_id == nil %>
+          <td> No Company Assigned </td>
+        <% end %>
         <td><%= link_to 'Show', realtor %></td>
         <td><%= link_to 'Edit', edit_realtor_path(realtor) %></td>
         <td><%= link_to 'Destroy', realtor, method: :delete, data: { confirm: 'Are you sure?' } %></td>
