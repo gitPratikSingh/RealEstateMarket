@@ -13,20 +13,22 @@
 
 
   <div class="field">
-    <%= form.label :real_estate_companies_id %>
-    <%= form.collection_select(:real_estate_companies_id, RealEstateCompany.all, :id, :name) %>
+    <%= form.label :real_estate_company_id %>
+    <%= form.collection_select(:real_estate_company_id, RealEstateCompany.all, :id, :name) %>
   </div>
 
   <% if current_user.user_type == 1 #admin type %>
     <div class="field">
       <%= form.label :realtor_contact %>
-      <%= form.collection_select(:realtor_contact, Realtor.all, :phone, :name) %>
+      <% realtor_phone_name_array = Realtor.all.collect { |realtor| [realtor.user.name, realtor.user.phone]} %>
+      <%= form.select(:realtor_contact, options_for_select(realtor_phone_name_array)) %>
+
     </div>
   <% end %>
   <% if current_user.user_type == 2 #realtor type %>
     <div class="field">
       <%= form.label :realtor_contact %>
-      <%= form.collection_select(:realtor_contact, current_user.realtor, :phone, :name) %>
+      <%= form.collection_select(:realtor_contact, current_user.realtor, current_user.phone, current_user.name) %>
     </div>
   <% end %>
 
@@ -70,10 +72,10 @@
     <%= form.text_field :current_owner %>
   </div>
 
-  <div class="field">
-    <%= form.label :potential_buyers %>
-    <%= form.text_field :potential_buyers %>
-  </div>
+<!--  <div class="field">-->
+    <%#= form.label :potential_buyers %>
+    <%#= form.text_field :potential_buyers %>
+<!--  </div>-->
 
   <div class="actions">
     <%= form.submit %>

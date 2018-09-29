@@ -1,13 +1,9 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>House:</strong>
-  <%= @house.house_id %>
-</p>
 
 <p>
   <strong>Company:</strong>
-  <%= @house.company_id %>
+  <%= @house.real_estate_company.name %>
 </p>
 
 <p>
@@ -57,7 +53,7 @@
 
 <p>
   <strong>Potential buyers:</strong>
-  <%= @house.potential_buyers %>
+<%= link_to 'Potential Buyers', house_potential_buyers_lists_path(@house.id) %>
 </p>
 
 <%= link_to 'Edit', edit_house_path(@house) %> |

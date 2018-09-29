@@ -24,13 +24,13 @@ real_estate_companies_list = [
 ]
 
 realtor_users_list = [
-  ["user1@user.com", "Hot Dog", "123456"],
-  ["user2@user.com", "Slim Shady", "123456"]
+  ["user1@user.com", "Hot Dog", "123456", "(919) 867-5309"],
+  ["user2@user.com", "Slim Shady", "123456", "(919) 123-4567"]
 ]
 
 house_hunter_users_list = [
-    ["user3@user.com", "Charlie Brown", "123456"],
-    ["user4@user.com", "Amelia Earhart", "123456"]
+    ["user3@user.com", "Charlie Brown", "123456", "(420) 069-1738"],
+    ["user4@user.com", "Amelia Earhart", "123456", "(911) 617-8765"]
 ]
 
 rec_object_list = []
