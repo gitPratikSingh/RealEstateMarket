@@ -13,7 +13,7 @@
   <tbody>
     <% @interest_lists.each do |interest_list| %>
       <tr>
-        <td><%= interest_list.house_hunter %></td>
+        <td><%= interest_list.house_hunter.user.name %></td>
         <td><%= link_to 'Show', interest_list %></td>
         <td><%= link_to 'Edit', edit_interest_list_path(interest_list) %></td>
         <td><%= link_to 'Destroy', interest_list, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -24,4 +24,5 @@
 
 <br>
 
-<%= link_to 'New Interest List', new_interest_list_path %>
+<%#= link_to 'New Interest List', new_interest_list_path %>
+<%= link_to 'Back', root_path %>

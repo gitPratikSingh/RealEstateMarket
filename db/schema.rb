@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_09_28_021104) do
+ActiveRecord::Schema.define(version: 2018_09_29_180209) do
 
   create_table "admins", force: :cascade do |t|
     t.string "email"
@@ -24,7 +24,7 @@ ActiveRecord::Schema.define(version: 2018_09_28_021104) do
   create_table "house_hunters", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "preferred_contact"
+    t.string "preferred_contact"
     t.integer "user_id"
     t.index ["user_id"], name: "index_house_hunters_on_user_id"
   end
@@ -40,9 +40,9 @@ ActiveRecord::Schema.define(version: 2018_09_28_021104) do
     t.string "current_owner"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "real_estate_companies_id"
     t.string "realtor_contact"
-    t.index ["real_estate_companies_id"], name: "index_houses_on_real_estate_companies_id"
+    t.integer "real_estate_company_id"
+    t.index ["real_estate_company_id"], name: "index_houses_on_real_estate_company_id"
   end
 
   create_table "inquiries", force: :cascade do |t|
@@ -61,6 +61,13 @@ ActiveRecord::Schema.define(version: 2018_09_28_021104) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["house_hunter_id"], name: "index_interest_lists_on_house_hunter_id"
+  end
+
+  create_table "potential_buyers_lists", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "house_id"
+    t.index ["house_id"], name: "index_potential_buyers_lists_on_house_id"
   end
 
   create_table "real_estate_companies", force: :cascade do |t|

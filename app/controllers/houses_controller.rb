@@ -5,6 +5,28 @@ class HousesController < ApplicationController
   # GET /houses.json
   def index
     @houses = House.all
+
+    if !params[:list_price].blank?
+      @houses = @houses.joins(:houses).where('houses.list_price LIKE ?', params[:list_price] ).order('id DESC')
+    end
+    if !params[:square_footage].blank?
+      @houses = @houses.joins(:houses).where('houses.square_footage LIKE ?', params[:square_footage] ).order('id DESC')
+    end
+    if !params[:location].blank?
+      @houses = @houses.joins(:houses).where('houses.location LIKE ?', params[:location] ).order('id DESC')
+    end
+    if !params[:year_built].blank?
+      @houses = @houses.joins(:houses).where('houses.year_built LIKE ? ', params[:year_built]).order('id DESC')
+    end
+    if !params[:num_of_floors].blank?
+      @houses = @houses.joins(:houses).where('houses.num_of_floors LIKE ? ', params[:num_of_floors]).order('id DESC')
+    end
+
+    @houses = @houses.page(params["page"]).order(:updated_at => :desc)
+  end
+
+  def search
+
   end
 
   # GET /houses/1
@@ -25,6 +47,7 @@ class HousesController < ApplicationController
   # POST /houses.json
   def create
     @house = House.new(house_params)
+    @house.potential_buyers_list = PotentialBuyersList.new(@house.id)
 
     respond_to do |format|
       if @house.save
@@ -69,6 +92,7 @@ class HousesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def house_params
-      params.require(:house).permit(:house_id, :company_id, :location, :square_footage, :year_built, :style, :list_price, :num_of_floors, :basement, :current_owner, :realtor_contact, :potential_buyers)
+      params.require(:house).permit(:location, :square_footage, :year_built, :style, :list_price,
+      :num_of_floors, :basement, :current_owner, :realtor_contact, :real_estate_company_id)
     end
 end
