@@ -4,25 +4,14 @@ class HousesController < ApplicationController
   # GET /houses
   # GET /houses.json
   def index
-    @houses = House.all
+    @houses = House.where(nil)
+    @houses = @houses.list_price(params[:list_price]) if params[:list_price].present?
+    # @houses = @houses.square_footage(params[:square_footage]) if params[:square_footage].present?
+    @houses = @houses.location(params[:location]) if params[:location].present?
+    @houses = @houses.year_built(params[:year_built]) if params[:year_built].present?
+    @houses = @houses.num_of_floors(params[:num_of_floors]) if params[:num_of_floors].present?
 
-    if !params[:list_price].blank?
-      @houses = @houses.joins(:houses).where('houses.list_price LIKE ?', params[:list_price] ).order('id DESC')
-    end
-    if !params[:square_footage].blank?
-      @houses = @houses.joins(:houses).where('houses.square_footage LIKE ?', params[:square_footage] ).order('id DESC')
-    end
-    if !params[:location].blank?
-      @houses = @houses.joins(:houses).where('houses.location LIKE ?', params[:location] ).order('id DESC')
-    end
-    if !params[:year_built].blank?
-      @houses = @houses.joins(:houses).where('houses.year_built LIKE ? ', params[:year_built]).order('id DESC')
-    end
-    if !params[:num_of_floors].blank?
-      @houses = @houses.joins(:houses).where('houses.num_of_floors LIKE ? ', params[:num_of_floors]).order('id DESC')
-    end
 
-    @houses = @houses.page(params["page"]).order(:updated_at => :desc)
   end
 
   def search
