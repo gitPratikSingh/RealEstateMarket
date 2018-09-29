@@ -2,8 +2,11 @@
 
 <p>
   <strong>House hunter:</strong>
-  <%= @interest_list.house_hunter %>
+  <%= @interest_list.house_hunter.user.name %>
+  <% @interest_list.houses.each do |house| %>
+  <p><%= house.location %></p>
+<% end %>
 </p>
 
-<%= link_to 'Edit', edit_interest_list_path(@interest_list) %> |
-<%= link_to 'Back', interest_lists_path %>
+<!--<%#= link_to 'Edit', edit_interest_list_path(@interest_list) %> |-->
+<%= link_to 'Back to Root', root_path %>

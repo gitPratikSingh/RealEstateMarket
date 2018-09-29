@@ -1,5 +1,10 @@
 class InterestListsController < ApplicationController
-  before_action :set_interest_list, only: [:show, :edit, :update, :destroy]
+  before_action :set_interest_list, only: [:show, :edit, :update, :destroy, :add_to_list]
+
+  def add_to_list
+    @interest_list.houses << House.find(params[:house_id])
+    @interest_list.save
+  end
 
   # GET /interest_lists
   # GET /interest_lists.json
@@ -69,6 +74,6 @@ class InterestListsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def interest_list_params
-      params.require(:interest_list).permit(:house_hunter_id)
+      params.require(:interest_list).permit(:house_hunter_id, :house_id, :hh_id, :il_id)
     end
 end

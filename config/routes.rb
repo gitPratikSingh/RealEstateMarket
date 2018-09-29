@@ -6,11 +6,12 @@ Rails.application.routes.draw do
   get 'realtors/set_user_type/:id' => 'realtors#set_user_type', as: 'set_type_realtor'
   get 'admins/set_user_type/:id' => 'admins#set_user_type', as: 'set_type_admin'
   get 'houses/search' => 'houses#search', as: 'search_houses'
+  get 'house_hunters/:hh_id/interest_list/:id/add_to_list/:house_id' => 'interest_lists#add_to_list', as: 'add_to_list'
   resources :users
 
-  resources :houses do
-    resources :inquiries
-  end
+  # resources :houses do
+  #   resources :inquiries
+  # end
 
   resources :houses do
     resource :potential_buyers_lists

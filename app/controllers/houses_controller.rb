@@ -6,11 +6,10 @@ class HousesController < ApplicationController
   def index
     @houses = House.where(nil)
     @houses = @houses.list_price(params[:list_price]) if params[:list_price].present?
-    # @houses = @houses.square_footage(params[:square_footage]) if params[:square_footage].present?
+    @houses = @houses.square_footage(params[:square_footage]) if params[:square_footage].present?
     @houses = @houses.location(params[:location]) if params[:location].present?
     @houses = @houses.year_built(params[:year_built]) if params[:year_built].present?
     @houses = @houses.num_of_floors(params[:num_of_floors]) if params[:num_of_floors].present?
-
 
   end
 

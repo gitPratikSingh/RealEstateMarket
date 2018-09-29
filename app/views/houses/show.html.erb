@@ -51,10 +51,18 @@
   <%= @house.realtor_contact %>
 </p>
 
+<% if current_user.user_type != 3 and current_user.user_type != 0%>
 <p>
   <strong>Potential buyers:</strong>
 <%= link_to 'Potential Buyers', house_potential_buyers_lists_path(@house.id) %>
 </p>
-
 <%= link_to 'Edit', edit_house_path(@house) %> |
+<% end %>
+
+<% if current_user.user_type == 3 %>
+  <%= link_to 'Submit Inquiry', house_hunter_inquiries_path(current_user.house_hunter.id)%>
+  <%= link_to 'Add to Interest List', add_to_list_path(hh_id: current_user.house_hunter.id,
+                                                       id: current_user.house_hunter.interest_list.id,
+                                                       house_id: @house ) %>
+<% end %>
 <%= link_to 'Back', houses_path %>

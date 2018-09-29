@@ -36,7 +36,8 @@
       <td><div><%= link_to "View All Houses", houses_path %></div></td>
       <td><div><%= link_to "Search Houses", search_houses_path %></div></td>
       <td><div><%= link_to "View My Inquiries", house_hunter_inquiries_path(current_user.house_hunter.id) %></div></td>
-      <td><div><%= link_to "View My House Interest List", house_hunter_interest_lists_path(current_user.house_hunter.id)%></div></td>
+      <td><div><%= link_to "View My House Interest List", house_hunter_interest_list_path(current_user.house_hunter.id,
+                                                                                          current_user.house_hunter.interest_list.id)%></div></td>
     </tr>
   </table>
 <% end %>
