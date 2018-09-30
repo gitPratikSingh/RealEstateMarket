@@ -2,7 +2,7 @@ require "application_system_test_case"
 
 class InquiriesTest < ApplicationSystemTestCase
   setup do
-    @inquiry = inquiries(:one)
+    @inquiry = inquiries(:inquiry_1)
   end
 
   test "visiting the index" do

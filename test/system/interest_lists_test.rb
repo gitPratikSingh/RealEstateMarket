@@ -2,7 +2,7 @@ require "application_system_test_case"
 
 class InterestListsTest < ApplicationSystemTestCase
   setup do
-    @interest_list = interest_lists(:one)
+    @interest_list = interest_lists(:interest_list_1)
   end
 
   test "visiting the index" do

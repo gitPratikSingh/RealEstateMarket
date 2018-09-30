@@ -2,7 +2,7 @@ require "application_system_test_case"
 
 class RealtorsTest < ApplicationSystemTestCase
   setup do
-    @realtor = realtors(:one)
+    @realtor = realtors(:realtor_1)
   end
 
   test "visiting the index" do
