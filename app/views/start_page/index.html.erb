@@ -26,6 +26,17 @@
   </table>
 <% end %>
 
+<!-- These are Realtor specific functions -->
+<% if current_user.user_type == 2 %>
+  <h4>Realtor</h4>
+  <table>
+    <tr>
+<!--      <td><div><%#= link_to "" %></div></td>-->
+      <td><div><%= link_to "View All Houses", houses_path %></div></td>
+    </tr>
+  </table>
+<% end %>
+
 <!-- These are House_Hunter Specific functions -->
 <% if current_user.user_type == 3 #|| current_user.user_type == 1 #House Hunter or Admin check%>
   <h4>House_Hunter</h4>

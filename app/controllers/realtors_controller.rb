@@ -2,10 +2,11 @@ class RealtorsController < ApplicationController
   before_action :set_realtor, only: [:show, :edit, :update, :destroy, :set_user_type]
 
   def set_user_type
+    # byebug
     @realtor.user.user_type = 2
     respond_to do |format|
       if @realtor.user.save
-        format.html { redirect_to realtor_path(@realtor.user), notice: 'Now viewing as a Realtor.' }
+        format.html { redirect_to realtor_path(@realtor), notice: 'Now viewing as a Realtor.' }
       end
     end
   end

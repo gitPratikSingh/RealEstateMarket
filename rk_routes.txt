@@ -1,0 +1,123 @@
+                         Prefix Verb   URI Pattern                                                                              Controller#Action
+                 interest_lists GET    /interest_lists(.:format)                                                                interest_lists#index
+                                POST   /interest_lists(.:format)                                                                interest_lists#create
+              new_interest_list GET    /interest_lists/new(.:format)                                                            interest_lists#new
+             edit_interest_list GET    /interest_lists/:id/edit(.:format)                                                       interest_lists#edit
+                  interest_list GET    /interest_lists/:id(.:format)                                                            interest_lists#show
+                                PATCH  /interest_lists/:id(.:format)                                                            interest_lists#update
+                                PUT    /interest_lists/:id(.:format)                                                            interest_lists#update
+                                DELETE /interest_lists/:id(.:format)                                                            interest_lists#destroy
+               new_user_session GET    /users/sign_in(.:format)                                                                 devise/sessions#new
+                   user_session POST   /users/sign_in(.:format)                                                                 devise/sessions#create
+           destroy_user_session DELETE /users/sign_out(.:format)                                                                devise/sessions#destroy
+              new_user_password GET    /users/password/new(.:format)                                                            devise/passwords#new
+             edit_user_password GET    /users/password/edit(.:format)                                                           devise/passwords#edit
+                  user_password PATCH  /users/password(.:format)                                                                devise/passwords#update
+                                PUT    /users/password(.:format)                                                                devise/passwords#update
+                                POST   /users/password(.:format)                                                                devise/passwords#create
+       cancel_user_registration GET    /users/cancel(.:format)                                                                  users/registrations#cancel
+          new_user_registration GET    /users/sign_up(.:format)                                                                 users/registrations#new
+         edit_user_registration GET    /users/edit(.:format)                                                                    users/registrations#edit
+              user_registration PATCH  /users(.:format)                                                                         users/registrations#update
+                                PUT    /users(.:format)                                                                         users/registrations#update
+                                DELETE /users(.:format)                                                                         users/registrations#destroy
+                                POST   /users(.:format)                                                                         users/registrations#create
+                reset_user_type GET    /users/reset_user_type(.:format)                                                         users#reset_user_type
+          set_type_house_hunter GET    /house_hunters/set_user_type/:id(.:format)                                               house_hunters#set_user_type
+               set_type_realtor GET    /realtors/set_user_type/:id(.:format)                                                    realtors#set_user_type
+                 set_type_admin GET    /admins/set_user_type/:id(.:format)                                                      admins#set_user_type
+                          users GET    /users(.:format)                                                                         users#index
+                                POST   /users(.:format)                                                                         users#create
+                       new_user GET    /users/new(.:format)                                                                     users#new
+                      edit_user GET    /users/:id/edit(.:format)                                                                users#edit
+                           user GET    /users/:id(.:format)                                                                     users#show
+                                PATCH  /users/:id(.:format)                                                                     users#update
+                                PUT    /users/:id(.:format)                                                                     users#update
+                                DELETE /users/:id(.:format)                                                                     users#destroy
+                house_inquiries GET    /houses/:house_id/inquiries(.:format)                                                    inquiries#index
+                                POST   /houses/:house_id/inquiries(.:format)                                                    inquiries#create
+              new_house_inquiry GET    /houses/:house_id/inquiries/new(.:format)                                                inquiries#new
+             edit_house_inquiry GET    /houses/:house_id/inquiries/:id/edit(.:format)                                           inquiries#edit
+                  house_inquiry GET    /houses/:house_id/inquiries/:id(.:format)                                                inquiries#show
+                                PATCH  /houses/:house_id/inquiries/:id(.:format)                                                inquiries#update
+                                PUT    /houses/:house_id/inquiries/:id(.:format)                                                inquiries#update
+                                DELETE /houses/:house_id/inquiries/:id(.:format)                                                inquiries#destroy
+                         houses GET    /houses(.:format)                                                                        houses#index
+                                POST   /houses(.:format)                                                                        houses#create
+                      new_house GET    /houses/new(.:format)                                                                    houses#new
+                     edit_house GET    /houses/:id/edit(.:format)                                                               houses#edit
+                          house GET    /houses/:id(.:format)                                                                    houses#show
+                                PATCH  /houses/:id(.:format)                                                                    houses#update
+                                PUT    /houses/:id(.:format)                                                                    houses#update
+                                DELETE /houses/:id(.:format)                                                                    houses#destroy
+                       realtors GET    /realtors(.:format)                                                                      realtors#index
+                                POST   /realtors(.:format)                                                                      realtors#create
+                    new_realtor GET    /realtors/new(.:format)                                                                  realtors#new
+                   edit_realtor GET    /realtors/:id/edit(.:format)                                                             realtors#edit
+                        realtor GET    /realtors/:id(.:format)                                                                  realtors#show
+                                PATCH  /realtors/:id(.:format)                                                                  realtors#update
+                                PUT    /realtors/:id(.:format)                                                                  realtors#update
+                                DELETE /realtors/:id(.:format)                                                                  realtors#destroy
+               start_page_index GET    /start_page/index(.:format)                                                              start_page#index
+         house_hunter_inquiries GET    /house_hunters/:house_hunter_id/inquiries(.:format)                                      inquiries#index
+                                POST   /house_hunters/:house_hunter_id/inquiries(.:format)                                      inquiries#create
+       new_house_hunter_inquiry GET    /house_hunters/:house_hunter_id/inquiries/new(.:format)                                  inquiries#new
+      edit_house_hunter_inquiry GET    /house_hunters/:house_hunter_id/inquiries/:id/edit(.:format)                             inquiries#edit
+           house_hunter_inquiry GET    /house_hunters/:house_hunter_id/inquiries/:id(.:format)                                  inquiries#show
+                                PATCH  /house_hunters/:house_hunter_id/inquiries/:id(.:format)                                  inquiries#update
+                                PUT    /house_hunters/:house_hunter_id/inquiries/:id(.:format)                                  inquiries#update
+                                DELETE /house_hunters/:house_hunter_id/inquiries/:id(.:format)                                  inquiries#destroy
+                  house_hunters GET    /house_hunters(.:format)                                                                 house_hunters#index
+                                POST   /house_hunters(.:format)                                                                 house_hunters#create
+               new_house_hunter GET    /house_hunters/new(.:format)                                                             house_hunters#new
+              edit_house_hunter GET    /house_hunters/:id/edit(.:format)                                                        house_hunters#edit
+                   house_hunter GET    /house_hunters/:id(.:format)                                                             house_hunters#show
+                                PATCH  /house_hunters/:id(.:format)                                                             house_hunters#update
+                                PUT    /house_hunters/:id(.:format)                                                             house_hunters#update
+                                DELETE /house_hunters/:id(.:format)                                                             house_hunters#destroy
+    house_hunter_interest_lists GET    /house_hunters/:house_hunter_id/interest_lists(.:format)                                 interest_lists#index
+                                POST   /house_hunters/:house_hunter_id/interest_lists(.:format)                                 interest_lists#create
+ new_house_hunter_interest_list GET    /house_hunters/:house_hunter_id/interest_lists/new(.:format)                             interest_lists#new
+edit_house_hunter_interest_list GET    /house_hunters/:house_hunter_id/interest_lists/:id/edit(.:format)                        interest_lists#edit
+     house_hunter_interest_list GET    /house_hunters/:house_hunter_id/interest_lists/:id(.:format)                             interest_lists#show
+                                PATCH  /house_hunters/:house_hunter_id/interest_lists/:id(.:format)                             interest_lists#update
+                                PUT    /house_hunters/:house_hunter_id/interest_lists/:id(.:format)                             interest_lists#update
+                                DELETE /house_hunters/:house_hunter_id/interest_lists/:id(.:format)                             interest_lists#destroy
+                                GET    /house_hunters(.:format)                                                                 house_hunters#index
+                                POST   /house_hunters(.:format)                                                                 house_hunters#create
+                                GET    /house_hunters/new(.:format)                                                             house_hunters#new
+                                GET    /house_hunters/:id/edit(.:format)                                                        house_hunters#edit
+                                GET    /house_hunters/:id(.:format)                                                             house_hunters#show
+                                PATCH  /house_hunters/:id(.:format)                                                             house_hunters#update
+                                PUT    /house_hunters/:id(.:format)                                                             house_hunters#update
+                                DELETE /house_hunters/:id(.:format)                                                             house_hunters#destroy
+                      inquiries GET    /inquiries(.:format)                                                                     inquiries#index
+                                POST   /inquiries(.:format)                                                                     inquiries#create
+                    new_inquiry GET    /inquiries/new(.:format)                                                                 inquiries#new
+                   edit_inquiry GET    /inquiries/:id/edit(.:format)                                                            inquiries#edit
+                        inquiry GET    /inquiries/:id(.:format)                                                                 inquiries#show
+                                PATCH  /inquiries/:id(.:format)                                                                 inquiries#update
+                                PUT    /inquiries/:id(.:format)                                                                 inquiries#update
+                                DELETE /inquiries/:id(.:format)                                                                 inquiries#destroy
+                           root GET    /                                                                                        start_page#index
+                         admins GET    /admins(.:format)                                                                        admins#index
+                                POST   /admins(.:format)                                                                        admins#create
+                      new_admin GET    /admins/new(.:format)                                                                    admins#new
+                     edit_admin GET    /admins/:id/edit(.:format)                                                               admins#edit
+                          admin GET    /admins/:id(.:format)                                                                    admins#show
+                                PATCH  /admins/:id(.:format)                                                                    admins#update
+                                PUT    /admins/:id(.:format)                                                                    admins#update
+                                DELETE /admins/:id(.:format)                                                                    admins#destroy
+          real_estate_companies GET    /real_estate_companies(.:format)                                                         real_estate_companies#index
+                                POST   /real_estate_companies(.:format)                                                         real_estate_companies#create
+        new_real_estate_company GET    /real_estate_companies/new(.:format)                                                     real_estate_companies#new
+       edit_real_estate_company GET    /real_estate_companies/:id/edit(.:format)                                                real_estate_companies#edit
+            real_estate_company GET    /real_estate_companies/:id(.:format)                                                     real_estate_companies#show
+                                PATCH  /real_estate_companies/:id(.:format)                                                     real_estate_companies#update
+                                PUT    /real_estate_companies/:id(.:format)                                                     real_estate_companies#update
+                                DELETE /real_estate_companies/:id(.:format)                                                     real_estate_companies#destroy
+             rails_service_blob GET    /rails/active_storage/blobs/:signed_id/*filename(.:format)                               active_storage/blobs#show
+      rails_blob_representation GET    /rails/active_storage/representations/:signed_blob_id/:variation_key/*filename(.:format) active_storage/representations#show
+             rails_disk_service GET    /rails/active_storage/disk/:encoded_key/*filename(.:format)                              active_storage/disk#show
+      update_rails_disk_service PUT    /rails/active_storage/disk/:encoded_token(.:format)                                      active_storage/disk#update
+           rails_direct_uploads POST   /rails/active_storage/direct_uploads(.:format)                                           active_storage/direct_uploads#create
