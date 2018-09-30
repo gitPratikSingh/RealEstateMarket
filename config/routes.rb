@@ -7,8 +7,9 @@ Rails.application.routes.draw do
   get 'admins/set_user_type/:id' => 'admins#set_user_type', as: 'set_type_admin'
   get 'houses/search' => 'houses#search', as: 'search_houses'
   get 'house_hunters/:hh_id/interest_list/:id/add_to_list/:house_id' => 'interest_lists#add_to_list', as: 'add_to_list'
+  get 'house_hunters/:hh_id/inquiries/new/:house_id' => 'inquiries#create', as: 'new_house_hunter_inquiry_path'
   resources :users
-
+6
   # resources :houses do
   #   resources :inquiries
   # end

@@ -41,10 +41,13 @@ class HouseHuntersController < ApplicationController
       @house_hunter.user = User.find(house_hunter_params[:user_id])
     end
     @house_hunter.interest_list = InterestList.new(@house_hunter.id)
+
     respond_to do |format|
       if @house_hunter.save
         format.html { redirect_to @house_hunter, notice: 'House hunter was successfully created.' }
         format.json { render :show, status: :created, location: @house_hunter }
+        puts @house_hunter.inspect
+        puts @house_hunter.interest_list.inspect
       else
         format.html { render :new }
         format.json { render json: @house_hunter.errors, status: :unprocessable_entity }

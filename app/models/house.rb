@@ -1,6 +1,6 @@
 class House < ApplicationRecord
   has_many :inquiries
-  has_many :house_hunters
+  has_many :house_hunters, through: :inquiries
   has_one :potential_buyers_list
   belongs_to :interest_list, optional: true
   belongs_to :real_estate_company
