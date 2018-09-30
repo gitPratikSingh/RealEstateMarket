@@ -1,24 +1,32 @@
 <%= form_tag(houses_path, method: :get) do %>
+  <p>Please include both high and low values.</p>
   <div>
-    <h4>List Price <br /></h4>
-    <%= text_field_tag :list_price, params[:list_price] %>
+    <h4>List Price Low <br /></h4>
+    <%= text_field_tag :list_price_low, params[:list_price_low] %>
+    <h4>List Price High</h4>
+    <%= text_field_tag :list_price_high, params[:list_price_high] %>
   </div>
   <div>
-    <h4>Square Footage <br /></h4>
-    <%= text_field_tag :square_footage, params[:square_footage] %>
-
+    <h4>Square Footage Low <br /></h4>
+    <%= text_field_tag :square_footage_low, params[:square_footage_low] %>
+    <h4>Square Footage High <br /></h4>
+    <%= text_field_tag :square_footage_high, params[:square_footage_high]%>
   </div>
   <div>
     <h4>Location <br /></h4>
     <%= text_field_tag :location, params[:location] %>
   </div>
   <div>
-    <h4>Year Built <br /></h4>
-    <%= text_field_tag :year_built, params[:year_built] %>
+    <h4>Year Built Low<br /></h4>
+    <%= text_field_tag :year_built_low, params[:year_built_low] %>
+    <h4>Year Built High <br /></h4>
+    <%= text_field_tag :year_built_high, params[:year_built_high] %>
   </div>
   <div>
-    <h4>Number of Floors <br /></h4>
-    <%= text_field_tag :num_of_floors, params[:num_of_floors] %>
+    <h4>Number of Floors Low <br /></h4>
+    <%= text_field_tag :num_of_floors_low, params[:num_of_floors_low] %>
+    <h4>Number of Floors High<br /></h4>
+    <%= text_field_tag :num_of_floors_high, params[:num_of_floors_high] %>
   </div>
   <br/>
   <div>
