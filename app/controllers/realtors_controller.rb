@@ -5,7 +5,7 @@ class RealtorsController < ApplicationController
     @realtor.user.user_type = 2
     respond_to do |format|
       if @realtor.user.save
-        format.html { redirect_to start_page_index_path, notice: 'Now viewing as a Realtor.' }
+        format.html { redirect_to realtor_path(@realtor.user), notice: 'Now viewing as a Realtor.' }
       end
     end
   end

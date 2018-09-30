@@ -1,0 +1,33 @@
+<%= form_tag(houses_path, method: :get) do %>
+  <div>
+    <h4>List Price <br /></h4>
+    <%= text_field_tag :list_price, params[:list_price] %>
+  </div>
+  <div>
+    <h4>Square Footage <br /></h4>
+    <%= text_field_tag :square_footage, params[:square_footage] %>
+
+  </div>
+  <div>
+    <h4>Location <br /></h4>
+    <%= text_field_tag :location, params[:location] %>
+  </div>
+  <div>
+    <h4>Year Built <br /></h4>
+    <%= text_field_tag :year_built, params[:year_built] %>
+  </div>
+  <div>
+    <h4>Number of Floors <br /></h4>
+    <%= text_field_tag :num_of_floors, params[:num_of_floors] %>
+  </div>
+  <br/>
+  <div>
+    <%= submit_tag 'Search', name: nil %>
+  </div>
+<% end %>
+<br/>
+<br/>
+<%= link_to 'Back', search_houses_path %>
+<%= link_to 'Back', root_path %>
+
+</section>

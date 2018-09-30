@@ -22,6 +22,9 @@
       <td><%= realestatecompany.revenue %></td>
       <td><%= realestatecompany.synopsis %></td>
       <td><%= realestatecompany.created_at.strftime(('%v')) %></td>
+      <% @realEstateCompanies.realtors.each do |realtors| %>
+        <p>realtors.name</p>
+      <% end %>
 
       <td><%= link_to 'Edit', edit_real_estate_company_path(realestatecompany) %></td>
       <td><%= link_to 'Destroy', real_estate_company_path(realestatecompany),

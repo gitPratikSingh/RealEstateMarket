@@ -4,7 +4,17 @@ class HousesController < ApplicationController
   # GET /houses
   # GET /houses.json
   def index
-    @houses = House.all
+    @houses = House.where(nil)
+    @houses = @houses.list_price(params[:list_price]) if params[:list_price].present?
+    @houses = @houses.square_footage(params[:square_footage]) if params[:square_footage].present?
+    @houses = @houses.location(params[:location]) if params[:location].present?
+    @houses = @houses.year_built(params[:year_built]) if params[:year_built].present?
+    @houses = @houses.num_of_floors(params[:num_of_floors]) if params[:num_of_floors].present?
+
+  end
+
+  def search
+
   end
 
   # GET /houses/1
@@ -25,6 +35,7 @@ class HousesController < ApplicationController
   # POST /houses.json
   def create
     @house = House.new(house_params)
+    @house.potential_buyers_list = PotentialBuyersList.new(@house.id)
 
     respond_to do |format|
       if @house.save
@@ -69,6 +80,7 @@ class HousesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def house_params
-      params.require(:house).permit(:house_id, :company_id, :location, :square_footage, :year_built, :style, :list_price, :num_of_floors, :basement, :current_owner, :realtor_contact, :potential_buyers)
+      params.require(:house).permit(:location, :square_footage, :year_built, :style, :list_price,
+      :num_of_floors, :basement, :current_owner, :realtor_contact, :real_estate_company_id)
     end
 end

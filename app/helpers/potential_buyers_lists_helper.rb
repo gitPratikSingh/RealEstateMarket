@@ -1,0 +1,2 @@
+module PotentialBuyersListsHelper
+end
