@@ -11,9 +11,9 @@ require 'database_cleaner'
 DatabaseCleaner.clean_with(:truncation)
 
 admin_list = [
-    [ "admin1@dm.com", "admin1_name", "admin1@dm.com" ],
-    [ "admin2@dm.com", "admin2_name", "admin2_password" ],
-    [ "admin3@dm.com", "admin3_name", "admin3_password" ]
+    [ "admin1@dm.com", "admin1_name", "admin1@dm.com", "(123) 456-7890" ],
+    [ "admin2@dm.com", "admin2_name", "admin2_password", "(321) 654-1234"],
+    [ "admin3@dm.com", "admin3_name", "admin3_password", "(456) 123-9876" ]
 ]
 
 real_estate_companies_list = [
@@ -68,7 +68,7 @@ end
 count = 0
 house_hunter_users_list.each do |email, name, password, phone|
   @user = User.create( email: email, name: name, password: password, phone: phone, user_type: 0 )
-  @house_hunter = HouseHunter.create( preferred_contact: "Email", user_id: @user.id)
+  @house_hunter = HouseHunter.create( preferred_contact: "E-mail", user_id: @user.id)
   puts @user.inspect
   puts @house_hunter.inspect
   count = count + 1
