@@ -4,7 +4,13 @@ class InquiriesController < ApplicationController
   # GET /inquiries
   # GET /inquiries.json
   def index
-    @inquiries = Inquiry.all
+    if current_user.user_type = 3
+      @inquiries = Inquiry.where("house_hunter_id = ?", params[:house_hunter_id])
+    elsif current_user.user_type = 2
+      @inquiries = Inquiry.where("house_id = ?", params[:house_id])
+    elsif current_user.user_type =1
+      @inquiries = Inquiry.all
+    end
   end
 
   # GET /inquiries/1
@@ -60,7 +66,7 @@ class InquiriesController < ApplicationController
   def destroy
     @inquiry.destroy
     respond_to do |format|
-      format.html { redirect_to inquiries_url, notice: 'Inquiry was successfully destroyed.' }
+      format.html { redirect_to inquiries_path(house_hunter_id: @inquiry.house_hunter_id, house_id: @inquiry.house_id), notice: 'Inquiry was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
