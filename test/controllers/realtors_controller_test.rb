@@ -1,9 +1,20 @@
 require 'test_helper'
 
 class RealtorsControllerTest < ActionDispatch::IntegrationTest
+
+  include Devise::Test::IntegrationHelpers
+
   setup do
+
+    @admin = admins(:admin_1)
+    @current_user = @admin.user
+    @current_user.admin = @admin
+
+    sign_in @admin.user
+
     @realtor = realtors(:realtor_1)
   end
+
 
   test "should get index" do
     get realtors_url
