@@ -2,7 +2,7 @@ require "application_system_test_case"
 
 class PotentialBuyersListsTest < ApplicationSystemTestCase
   setup do
-    @potential_buyers_list = potential_buyers_lists(:one)
+    @potential_buyers_list = potential_buyers_lists(:potential_buyers_list_1)
   end
 
   test "visiting the index" do

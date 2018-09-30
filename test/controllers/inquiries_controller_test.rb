@@ -2,7 +2,7 @@ require 'test_helper'
 
 class InquiriesControllerTest < ActionDispatch::IntegrationTest
   setup do
-    @inquiry = inquiries(:one)
+    @inquiry = inquiries(:inquiry_1)
   end
 
   test "should get index" do

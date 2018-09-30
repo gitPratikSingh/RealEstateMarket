@@ -2,7 +2,7 @@ require 'test_helper'
 
 class PotentialBuyersListsControllerTest < ActionDispatch::IntegrationTest
   setup do
-    @potential_buyers_list = potential_buyers_lists(:one)
+    @potential_buyers_list = potential_buyers_lists(:potential_buyers_list_1)
   end
 
   test "should get index" do
