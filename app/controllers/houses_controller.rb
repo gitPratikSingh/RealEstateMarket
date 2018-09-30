@@ -36,10 +36,12 @@ class HousesController < ApplicationController
   def create
     @house = House.new(house_params)
     @house.potential_buyers_list = PotentialBuyersList.new(@house.id)
-    puts
+    @house.potential_buyers_list.save
     respond_to do |format|
       if @house.save
         format.html { redirect_to @house, notice: 'House was successfully created.' }
+        puts @house.inspect
+        puts @house.potential_buyers_list.inspect
         format.json { render :show, status: :created, location: @house }
       else
         format.html { render :new }

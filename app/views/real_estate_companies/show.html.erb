@@ -40,6 +40,12 @@
   <strong>synopsis:</strong>
   <%= @realEstateCompany.synopsis  %><br>
 </p>
+<p>
+  <strong>realtors: </strong>
+  <% @realEstateCompany.realtors.each do |realtors| %>
+    <p><%= realtors.user.name %></p>
+  <% end %>
+</p>
 
 <%= link_to 'Edit', edit_real_estate_company_path(@realEstateCompany) %> |
 <%= link_to 'Back', real_estate_companies_path %>
