@@ -11,4 +11,6 @@ class RealEstateCompany < ApplicationRecord
   validates :revenue, presence: true, numericality: true
   validates :synopsis, presence: true
 
+
+
 end

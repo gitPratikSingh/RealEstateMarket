@@ -11,26 +11,35 @@
     </div>
   <% end %>
 
-
-  <div class="field">
-    <%= form.label :real_estate_company_id %>
-    <%= form.collection_select(:real_estate_company_id, RealEstateCompany.all, :id, :name) %>
-  </div>
-
   <% if current_user.user_type == 1 #admin type %>
     <div class="field">
       <%= form.label :realtor_contact %>
       <% realtor_phone_name_array = Realtor.all.collect { |realtor| [realtor.user.name, realtor.user.phone]} %>
       <%= form.select(:realtor_contact, options_for_select(realtor_phone_name_array)) %>
+    </div>
 
+    <div class="field">
+      <%= form.label :real_estate_company_id %>
+      <%= form.collection_select(:real_estate_company_id, RealEstateCompany.all, :id, :name) %>
     </div>
   <% end %>
+
   <% if current_user.user_type == 2 #realtor type %>
     <div class="field">
+<!--      Attempting to display Real Estate Company of the current user, if they're a Realtor.
+          Currently just passing the company_id in a hidden field.
+-->
+      <%#= form.label :real_estate_company_id %>
+      <%#= form.label RealEstateCompany, current_user.realtor, :name %>
+      <%#= form.select(:real_estate_company_id, [current_user.realtor.real_estate_company_id, ]) %>
+      <%= form.hidden_field :real_estate_company_id, { :value => current_user.realtor.real_estate_company_id } %>
+    </div>
+    <div class="field">
       <%= form.label :realtor_contact %>
-      <%= form.select(:realtor_contact, [current_user.phone, current_user.email].hash) %>
+      <%= form.select(:realtor_contact, [current_user.phone, current_user.email]) %>
       <%= form.hidden_field :realtor_id, { :value => current_user.realtor.id } %>
     </div>
+
   <% end %>
 
     <div class="field">

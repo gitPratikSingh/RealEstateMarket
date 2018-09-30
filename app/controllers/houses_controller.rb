@@ -54,24 +54,32 @@ class HousesController < ApplicationController
   # PATCH/PUT /houses/1
   # PATCH/PUT /houses/1.json
   def update
-    respond_to do |format|
-      if @house.update(house_params)
-        format.html { redirect_to @house, notice: 'House was successfully updated.' }
-        format.json { render :show, status: :ok, location: @house }
-      else
-        format.html { render :edit }
-        format.json { render json: @house.errors, status: :unprocessable_entity }
+    if current_user.user_type == 1 || current_user.user_type == 2 && current_user.realtor.id == @house.realtor_id
+      respond_to do |format|
+        if @house.update(house_params)
+          format.html { redirect_to @house, notice: 'House was successfully updated.' }
+          format.json { render :show, status: :ok, location: @house }
+        else
+          format.html { render :edit }
+          format.json { render json: @house.errors, status: :unprocessable_entity }
+        end
       end
+    else
+      # notify user they can't update this house
     end
   end
 
   # DELETE /houses/1
   # DELETE /houses/1.json
   def destroy
-    @house.destroy
-    respond_to do |format|
-      format.html { redirect_to houses_url, notice: 'House was successfully destroyed.' }
-      format.json { head :no_content }
+    if current_user.user_type == 1 || current_user.user_type == 2 && current_user.realtor.id == @house.realtor_id
+      @house.destroy
+      respond_to do |format|
+        format.html { redirect_to houses_url, notice: 'House was successfully destroyed.' }
+        format.json { head :no_content }
+      end
+    else
+      # notify user they can't destroy this house
     end
   end
 

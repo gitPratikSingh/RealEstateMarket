@@ -53,7 +53,6 @@ class RealEstateCompaniesController < ApplicationController
       end
 
     else
-
       respond_to do |format|
         format.html { redirect_to real_estate_companies_url, notice: 'Cannot delete Real State Company. You do not have access' }
         format.json { head :no_content }
