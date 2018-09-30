@@ -28,8 +28,8 @@
   <% if current_user.user_type == 2 #realtor type %>
     <div class="field">
       <%= form.label :realtor_contact %>
-      <%= form.select(:realtor_contact, [current_user.realtor.id.to_s]) %>
-      <%#= form.text_field(current_user.realtor.id.to_s) %>
+      <%= form.select(:realtor_contact, [current_user.phone, current_user.email].hash) %>
+      <%= form.hidden_field :realtor_id, { :value => current_user.realtor.id } %>
     </div>
   <% end %>
 
