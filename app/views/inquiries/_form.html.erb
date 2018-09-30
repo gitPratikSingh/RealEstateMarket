@@ -21,6 +21,10 @@
     <%= form.text_field :message %>
   </div>
 
+  <div>
+    <%= form.hidden_field(:house_id, :value => params[:house_id]) %>
+  </div>
+
   <div class="actions">
     <%= form.submit %>
   </div>

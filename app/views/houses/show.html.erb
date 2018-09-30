@@ -60,7 +60,8 @@
 <% end %>
 
 <% if current_user.user_type == 3 %>
-  <%= link_to 'Submit Inquiry', house_hunter_inquiries_path(current_user.house_hunter.id)%>
+  <%= link_to 'Submit Inquiry', new_house_hunter_inquiry_path(house_hunter_id: current_user.house_hunter.id,
+                                                              house_id: @house.id)%>
   <%= link_to 'Add to Interest List', add_to_list_path(hh_id: current_user.house_hunter.id,
                                                        id: current_user.house_hunter.interest_list.id,
                                                        house_id: @house ) %>

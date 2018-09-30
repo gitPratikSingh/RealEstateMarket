@@ -26,6 +26,13 @@ class InquiriesController < ApplicationController
   def create
     @inquiry = Inquiry.new(inquiry_params)
     @inquiry.house_hunter = current_user.house_hunter
+    current_user.house_hunter.inquiries << @inquiry
+    @house = House.find(inquiry_params[:house_id])
+    @potential_buyers_list = PotentialBuyersList.find(@house.potential_buyers_list.id)
+    @potential_buyers_list.house_hunters << current_user.house_hunter
+    @potential_buyers_list.save
+    @current_user.house_hunter.save
+    @house.potential_buyers_list.save
     respond_to do |format|
       if @inquiry.save
         format.html { redirect_to @inquiry, notice: 'Inquiry was successfully created.' }
@@ -69,6 +76,6 @@ class InquiriesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def inquiry_params
-      params.require(:inquiry).permit(:subject, :message)
+      params.require(:inquiry).permit(:subject, :message, :house_id)
     end
 end

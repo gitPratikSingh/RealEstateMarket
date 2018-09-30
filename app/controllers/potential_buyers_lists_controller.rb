@@ -69,6 +69,6 @@ class PotentialBuyersListsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def potential_buyers_list_params
-      params.fetch(:potential_buyers_list, {})
+      params.require(:potential_buyers_list).permit(:house_id)
     end
 end
