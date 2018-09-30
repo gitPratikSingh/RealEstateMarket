@@ -18,7 +18,7 @@ admin_list = [
 
 real_estate_companies_list = [
   ["We'll Sell Your Home!", "http://sellyohome.com", "1738 Home Seller Way", "23",
-    "1992", "100000000", "We sell your house like you won't flipped believe!"],
+    "1992", "100000000", "We sell your house like you won't flippin' believe!"],
   ["Home Sellers Inc.", "http://homesellersinc.com", "1999 Realtation Dr", "100",
    "1893", "85736223", "Home Sellers Inc is the best. For real. Est. 1893."]
 ]

@@ -33,11 +33,10 @@ class InquiriesController < ApplicationController
     @inquiry = Inquiry.new(inquiry_params)
     @inquiry.house_hunter = current_user.house_hunter
     @house = House.find(inquiry_params[:house_id])
-    @house.house_hunters << current_user.house_hunter
-    current_user.house_hunter.inquiries << @inquiry
-
     respond_to do |format|
       if @inquiry.save
+        current_user.house_hunter.inquiries << @inquiry
+        current_user.house_hunter.save
         format.html { redirect_to @inquiry, notice: 'Inquiry was successfully created.' }
         format.json { render :show, status: :created, location: @inquiry }
       else
