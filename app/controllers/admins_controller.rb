@@ -34,6 +34,9 @@ class AdminsController < ApplicationController
 
   def show
     @admin = Admin.find(params['id'])
+    @admin.user.user_type = 1
+    @admin.user.save
+    @admin
   end
 
   def index
