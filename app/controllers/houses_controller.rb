@@ -24,6 +24,7 @@ class HousesController < ApplicationController
 
   # GET /houses/new
   def new
+    # binding.pry
     @house = House.new
   end
 
