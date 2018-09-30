@@ -68,7 +68,9 @@ end
 count = 0
 house_hunter_users_list.each do |email, name, password, phone|
   @user = User.create( email: email, name: name, password: password, phone: phone, user_type: 0 )
-  @house_hunter = HouseHunter.create( preferred_contact: "E-mail", user_id: @user.id)
+  @house_hunter = HouseHunter.create( preferred_contact: "E-mail", user_id: @user.id )
+  @interest_list = InterestList.create(house_hunter_id: @house_hunter.id)
+  @house_hunter.interest_list = @interest_list
   puts @user.inspect
   puts @house_hunter.inspect
   count = count + 1
