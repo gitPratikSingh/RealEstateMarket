@@ -1,7 +1,17 @@
 require 'test_helper'
 
 class PotentialBuyersListsControllerTest < ActionDispatch::IntegrationTest
+
+  include Devise::Test::IntegrationHelpers
+
   setup do
+
+    @admin = admins(:admin_1)
+    @current_user = @admin.user
+    @current_user.admin = @admin
+
+    sign_in @admin.user
+
     @potential_buyers_list = potential_buyers_lists(:potential_buyers_list_1)
   end
 

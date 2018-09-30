@@ -1,8 +1,16 @@
 require 'test_helper'
 
 class HouseHuntersControllerTest < ActionDispatch::IntegrationTest
+
+  include Devise::Test::IntegrationHelpers
+
   setup do
+
     @house_hunter = house_hunters(:house_hunter_1)
+    @current_user = @house_hunter.user
+    @current_user.house_hunter = @house_hunter
+
+    sign_in @current_user
   end
 
   test "should get index" do

@@ -1,7 +1,17 @@
 require 'test_helper'
 
 class InterestListsControllerTest < ActionDispatch::IntegrationTest
+
+  include Devise::Test::IntegrationHelpers
+
   setup do
+
+    @admin = admins(:admin_1)
+    @current_user = @admin.user
+    @current_user.admin = @admin
+
+    sign_in @admin.user
+
     @interest_list = interest_lists(:interest_list_1)
   end
 
