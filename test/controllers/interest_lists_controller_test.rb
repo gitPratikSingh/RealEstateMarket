@@ -2,7 +2,7 @@ require 'test_helper'
 
 class InterestListsControllerTest < ActionDispatch::IntegrationTest
   setup do
-    @interest_list = interest_lists(:one)
+    @interest_list = interest_lists(:interest_list_1)
   end
 
   test "should get index" do

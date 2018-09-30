@@ -2,7 +2,7 @@ require 'test_helper'
 
 class RealtorsControllerTest < ActionDispatch::IntegrationTest
   setup do
-    @realtor = realtors(:one)
+    @realtor = realtors(:realtor_1)
   end
 
   test "should get index" do

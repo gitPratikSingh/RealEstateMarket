@@ -1,11 +1,131 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
-
-one:
-  email: MyString
-  name: MyString
-  password: MyString
-
-two:
-  email: MyString
-  name: MyString
-  password: MyString
+---
+user_1:
+  id: 1
+  email: admin1@dm.com
+  name: admin1_name
+  password: 
+  created_at: '2018-09-30 17:08:38.957931'
+  updated_at: '2018-09-30 17:08:38.957931'
+  encrypted_password: "$2a$11$Aq0a4RqKm2nqp7xbDOii3.L7./8rwC3WiQIh0Aa/nCLQ5HaFEh7ge"
+  reset_password_token: 
+  reset_password_sent_at: 
+  remember_created_at: 
+  user_type: 1
+  phone: 
+user_2:
+  id: 2
+  email: admin2@dm.com
+  name: admin2_name
+  password: 
+  created_at: '2018-09-30 17:08:39.124575'
+  updated_at: '2018-09-30 17:08:39.124575'
+  encrypted_password: "$2a$11$ZjHaZXHW6it/4vV/YkxMK.HTyAhTy8tCvEcZWsYLpmrMNfZMFZrw6"
+  reset_password_token: 
+  reset_password_sent_at: 
+  remember_created_at: 
+  user_type: 1
+  phone: 
+user_3:
+  id: 3
+  email: admin3@dm.com
+  name: admin3_name
+  password: 
+  created_at: '2018-09-30 17:08:39.268153'
+  updated_at: '2018-09-30 17:08:39.268153'
+  encrypted_password: "$2a$11$lAO6531OXt3/.DLRH3.n..KWwsI0WNj7H/K5q46xRWtlwzww2wn4W"
+  reset_password_token: 
+  reset_password_sent_at: 
+  remember_created_at: 
+  user_type: 1
+  phone: 
+user_4:
+  id: 4
+  email: user1@user.com
+  name: Hot Dog
+  password: 
+  created_at: '2018-09-30 17:08:39.414036'
+  updated_at: '2018-09-30 17:08:39.414036'
+  encrypted_password: "$2a$11$xS33D1ALPHGe6.3KX2FpGupmOXsxxVFAMOyEg0EE3V0OfnQibmS0K"
+  reset_password_token: 
+  reset_password_sent_at: 
+  remember_created_at: 
+  user_type: 0
+  phone: "(919) 867-5309"
+user_5:
+  id: 5
+  email: user2@user.com
+  name: Slim Shady
+  password: 
+  created_at: '2018-09-30 17:08:39.567706'
+  updated_at: '2018-09-30 17:08:39.567706'
+  encrypted_password: "$2a$11$/DvhmoN2qt30s7BSpomWzOeF3XJxfFvj0S6OZ/lAgkzGqU71IuWf."
+  reset_password_token: 
+  reset_password_sent_at: 
+  remember_created_at: 
+  user_type: 0
+  phone: "(919) 123-4567"
+user_6:
+  id: 6
+  email: user3@user.com
+  name: Charlie Brown
+  password: 
+  created_at: '2018-09-30 17:08:39.714700'
+  updated_at: '2018-09-30 17:08:39.714700'
+  encrypted_password: "$2a$11$zTGt/TBd0O4SgB22hxoZieRlxbXtHiMO4NG7lb4E2wm6er7IEUeUa"
+  reset_password_token: 
+  reset_password_sent_at: 
+  remember_created_at: 
+  user_type: 0
+  phone: "(420) 069-1738"
+user_7:
+  id: 7
+  email: user4@user.com
+  name: Amelia Earhart
+  password: 
+  created_at: '2018-09-30 17:08:39.872508'
+  updated_at: '2018-09-30 17:08:39.872508'
+  encrypted_password: "$2a$11$BaOyDG/xy3G/rH06L.ZnmuC41KaFc3fGLJUt8jIRXkJpv.2T9hqzq"
+  reset_password_token: 
+  reset_password_sent_at: 
+  remember_created_at: 
+  user_type: 0
+  phone: "(911) 617-8765"
+user_8:
+  id: 8
+  email: 1@1.com
+  name: 1@1.com
+  password: 
+  created_at: '2018-09-30 17:08:56.050335'
+  updated_at: '2018-09-30 17:23:19.762969'
+  encrypted_password: "$2a$11$sNGjeqPEwuAr4aoB3JGsVe/597W7nH89IaLuC6asbNotn/xHPIzea"
+  reset_password_token: 
+  reset_password_sent_at: 
+  remember_created_at: 
+  user_type: 0
+  phone: 1@1.com
+user_9:
+  id: 9
+  email: h@h.h
+  name: h@h.h
+  password: 
+  created_at: '2018-09-30 17:23:42.147245'
+  updated_at: '2018-09-30 17:41:26.473051'
+  encrypted_password: "$2a$11$ANRaD9b9lis8ii/N/ihoYOGhy6oHT66C4Dehq4HWVqf1vFls/yvH2"
+  reset_password_token: 
+  reset_password_sent_at: 
+  remember_created_at: 
+  user_type: 0
+  phone: h@h.h
+user_10:
+  id: 10
+  email: h2@h2.com
+  name: h2@h2.com
+  password: 
+  created_at: '2018-09-30 17:41:45.007008'
+  updated_at: '2018-09-30 17:41:52.965115'
+  encrypted_password: "$2a$11$Uxu4M.eM9PUeTl.ykmKbLe.LIIQH24dqOYCqVPgVJjQisBgYFt1Pi"
+  reset_password_token: 
+  reset_password_sent_at: 
+  remember_created_at: 
+  user_type: 3
+  phone: h2@h2.com

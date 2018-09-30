@@ -4,7 +4,13 @@ class InquiriesController < ApplicationController
   # GET /inquiries
   # GET /inquiries.json
   def index
-    @inquiries = Inquiry.all
+    if current_user.user_type = 3
+      @inquiries = Inquiry.where("house_hunter_id = ?", params[:house_hunter_id])
+    elsif current_user.user_type = 2
+      @inquiries = Inquiry.where("house_id = ?", params[:house_id])
+    elsif current_user.user_type =1
+      @inquiries = Inquiry.all
+    end
   end
 
   # GET /inquiries/1
@@ -26,13 +32,10 @@ class InquiriesController < ApplicationController
   def create
     @inquiry = Inquiry.new(inquiry_params)
     @inquiry.house_hunter = current_user.house_hunter
-    current_user.house_hunter.inquiries << @inquiry
     @house = House.find(inquiry_params[:house_id])
-    @potential_buyers_list = PotentialBuyersList.find(@house.potential_buyers_list.id)
-    @potential_buyers_list.house_hunters << current_user.house_hunter
-    @potential_buyers_list.save
-    @current_user.house_hunter.save
-    @house.potential_buyers_list.save
+    @house.house_hunters << current_user.house_hunter
+    current_user.house_hunter.inquiries << @inquiry
+
     respond_to do |format|
       if @inquiry.save
         format.html { redirect_to @inquiry, notice: 'Inquiry was successfully created.' }
@@ -63,7 +66,7 @@ class InquiriesController < ApplicationController
   def destroy
     @inquiry.destroy
     respond_to do |format|
-      format.html { redirect_to inquiries_url, notice: 'Inquiry was successfully destroyed.' }
+      format.html { redirect_to inquiries_path(house_hunter_id: @inquiry.house_hunter_id, house_id: @inquiry.house_id), notice: 'Inquiry was successfully destroyed.' }
       format.json { head :no_content }
     end
   end

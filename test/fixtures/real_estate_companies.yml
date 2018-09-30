@@ -1,21 +1,23 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
-
-one:
+---
+real_estate_company_1:
   id: 1
-  name: MyString
-  website: MyString
-  address: MyString
-  size: 1
-  founding_year: 1
-  revenue: 1
-  synopsis: MyString
-
-two:
-  id: 1
-  name: MyString
-  website: MyString
-  address: MyString
-  size: 1
-  founding_year: 1
-  revenue: 1
-  synopsis: MyString
+  name: We'll Sell Your Home!
+  website: http://sellyohome.com
+  address: 1738 Home Seller Way
+  size: 23
+  founded: 1992
+  revenue: 100000000
+  created_at: '2018-09-30 17:08:38.779761'
+  updated_at: '2018-09-30 17:08:38.779761'
+  synopsis: We sell your house like you won't flipped believe!
+real_estate_company_2:
+  id: 2
+  name: Home Sellers Inc.
+  website: http://homesellersinc.com
+  address: 1999 Realtation Dr
+  size: 100
+  founded: 1893
+  revenue: 85736223
+  created_at: '2018-09-30 17:08:38.785853'
+  updated_at: '2018-09-30 17:08:38.785853'
+  synopsis: Home Sellers Inc is the best. For real. Est. 1893.

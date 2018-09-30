@@ -54,7 +54,9 @@
 <% if current_user.user_type != 3 and current_user.user_type != 0%>
 <p>
   <strong>Potential buyers:</strong>
-<%= link_to 'Potential Buyers', house_potential_buyers_lists_path(@house.id) %>
+  <% @house.house_hunters.each do |house_hunters| %>
+    <p><%= house_hunters.user.name %></p>
+  <% end %>
 </p>
 <%= link_to 'Edit', edit_house_path(@house) %> |
 <% end %>

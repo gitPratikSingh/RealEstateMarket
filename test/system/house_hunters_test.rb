@@ -2,7 +2,7 @@ require "application_system_test_case"
 
 class HouseHuntersTest < ApplicationSystemTestCase
   setup do
-    @house_hunter = house_hunters(:one)
+    @house_hunter = house_hunters(:house_hunter_1)
   end
 
   test "visiting the index" do
