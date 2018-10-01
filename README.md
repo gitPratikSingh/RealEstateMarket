@@ -42,7 +42,7 @@ Success: You see whatever change you made persisted.
 
 * Edit or delete real estate companies/users (realtors or house hunters)/houses/inquiries from the system.
 1. After logged in as admin1@dm.com, click "Admin Home Page".
-2. From the actions menu, you can click on the lins viewAllRealEstateCompanies/viewAllUsers/viewAllHouses/viewAllInquiries to view the list of all Real Estate Companies/Users/Houses/Inquiries respectively. Click on the Edit/destroy to edit any item you desire.
+2. From the actions menu, you can click on the lins viewAllRealEstateCompanies/viewAllUsers/viewAllHouses/viewAllInquiries to view the list of all Real Estate Companies/Users/Houses/Inquiries respectively. Click on the Edit/destroy to edit/delete any item you desire.
 
 ### How to Test Realtors
 A. Sign up as Realtor
