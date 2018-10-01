@@ -1,5 +1,5 @@
 class Inquiry < ApplicationRecord
-  belongs_to :house
+  belongs_to :house, optional: true
   belongs_to :house_hunter
 
   validates :subject, presence: true

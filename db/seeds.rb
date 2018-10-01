@@ -18,7 +18,7 @@ admin_list = [
 
 real_estate_companies_list = [
   ["We'll Sell Your Home!", "http://sellyohome.com", "1738 Home Seller Way", "23",
-    "1992", "100000000", "We sell your house like you won't flipped believe!"],
+    "1992", "100000000", "We sell your house like you won't flippin' believe!"],
   ["Home Sellers Inc.", "http://homesellersinc.com", "1999 Realtation Dr", "100",
    "1893", "85736223", "Home Sellers Inc is the best. For real. Est. 1893."]
 ]
@@ -68,7 +68,9 @@ end
 count = 0
 house_hunter_users_list.each do |email, name, password, phone|
   @user = User.create( email: email, name: name, password: password, phone: phone, user_type: 0 )
-  @house_hunter = HouseHunter.create( preferred_contact: "E-mail", user_id: @user.id)
+  @house_hunter = HouseHunter.create( preferred_contact: "E-mail", user_id: @user.id )
+  @interest_list = InterestList.create(house_hunter_id: @house_hunter.id)
+  @house_hunter.interest_list = @interest_list
   puts @user.inspect
   puts @house_hunter.inspect
   count = count + 1
