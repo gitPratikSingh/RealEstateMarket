@@ -6,6 +6,16 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+ActiveRecord::Base.establish_connection
+ActiveRecord::Base.connection.tables.each do |table|
+  next if table == 'schema_migrations'
+
+  # MySQL and PostgreSQL
+  ActiveRecord::Base.connection.execute("TRUNCATE #{table}")
+
+  # SQLite
+  # ActiveRecord::Base.connection.execute("DELETE FROM #{table}")
+end
 
 admin_list = [
     [ "admin1@dm.com", "admin1_name", "admin1@dm.com", "(123) 456-7890" ],
