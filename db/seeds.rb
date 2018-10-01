@@ -11,7 +11,7 @@ ActiveRecord::Base.connection.tables.each do |table|
   next if table == 'schema_migrations'
 
   # MySQL and PostgreSQL
-  ActiveRecord::Base.connection.execute("TRUNCATE #{table}")
+  ActiveRecord::Base.connection.execute("DELETE FROM #{table}")
 
   # SQLite
   # ActiveRecord::Base.connection.execute("DELETE FROM #{table}")
