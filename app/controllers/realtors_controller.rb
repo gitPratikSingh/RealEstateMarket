@@ -6,7 +6,7 @@ class RealtorsController < ApplicationController
     @realtor.user.user_type = 2
     respond_to do |format|
       if @realtor.user.save
-        format.html { redirect_to realtor_path(@realtor), notice: 'Now viewing as a Realtor.' }
+        format.html { redirect_to root_path, notice: 'Now viewing as a Realtor.' }
       end
     end
   end
@@ -30,6 +30,10 @@ class RealtorsController < ApplicationController
   # GET /realtors/1/edit
   def edit
   end
+
+  # def edit_company
+  #   @real_estate_company = Realtor.real_estate_company_id
+  # end
 
   # POST /realtors
   # POST /realtors.json

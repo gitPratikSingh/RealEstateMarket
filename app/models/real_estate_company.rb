@@ -2,7 +2,6 @@ require 'uri'
 
 class RealEstateCompany < ApplicationRecord
   has_many :realtors
-  has_many :houses
 
   validates :name, presence: true
   validates :website, format: { with: URI::regexp(%w(http https)), :message => "can't be invalid URL"}

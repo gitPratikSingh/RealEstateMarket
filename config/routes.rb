@@ -9,7 +9,8 @@ Rails.application.routes.draw do
   get 'house_hunters/:hh_id/interest_list/:id/add_to_list/:house_id' => 'interest_lists#add_to_list', as: 'add_to_list'
   get 'house_hunters/:hh_id/inquiries/new/:house_id' => 'inquiries#create', as: 'new_house_hunter_inquiry_path'
 
-  get 'real_estate_companies/:id/potential_buyers', to: 'real_estate_companies#potential_buyers'
+  # get 'real_estate_companies/:id/potential_buyers', to: 'real_estate_companies#potential_buyers'
+
   resources :users
 
   resources :houses do
@@ -17,6 +18,7 @@ Rails.application.routes.draw do
   end
 
   resources :realtors
+  get 'realtors/:id/edit_company', to: 'realtors#edit_company'
 
   resources :house_hunters do
     resources :inquiries

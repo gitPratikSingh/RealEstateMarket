@@ -6,6 +6,47 @@ The following is an enumerated list of each requirement layed out in the documen
 ### How to Test Admins
 
 ### How to Test Realtors
+A. Sign up as Realtor
+ 1. Log in as user3@user.com with passowrd '123456'.
+ 2. Click 'Make Realtor Account'
+ 3. Choose Real Estate Company from drop down box
+ 4. Create Realtor
+ 5. Click Home
+Success: You made a Realtor
+
+B. Change to Realtor Role
+ 1. Do Test A
+ 2. Select 'Stop Viewing as Any Role'
+ 3. Select 'View Realtor Profile'
+Success: Changed role to Realtor
+
+C. List House
+ 1. Do Test B:
+ 2. Select 'List House'
+ 3. Enter valid information for House fields
+ 4. Select 'Create House'
+Success: List House
+
+D. View All Houses
+ 1. Do Test B
+ 2. Select 'View All Houses'
+
+E. Edit Realtor Posted House
+ 1. Do Test C
+ 2. Do Test D
+ 3. Select 'Edit' from the house made in Test C
+ 4. Edit desired information
+ 5. Select Update
+Success: Edit Realtor Posted House
+
+F. Remove Realtor Listed House
+ 1. Do Test C
+ 2. Do Test D
+ 3. Select 'Destroy' from the house made in Test C
+Success: Remove Realtor Listed House
+ 
+
+
 
 ### How To Test House Hunters
 * Log in with email and password.
