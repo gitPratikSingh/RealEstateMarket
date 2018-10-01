@@ -12,7 +12,7 @@ DatabaseCleaner.clean_with(:truncation)
 
 admin_list = [
     [ "admin1@dm.com", "admin1_name", "admin1@dm.com", "(123) 456-7890" ],
-    [ "admin2@dm.com", "admin2_name", "admin2_password", "(321) 654-1234"],
+    [ "admin@dm.com", "admin2_name", "GoPack2018", "(321) 654-1234"],
     [ "admin3@dm.com", "admin3_name", "admin3_password", "(456) 123-9876" ]
 ]
 
