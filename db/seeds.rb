@@ -19,7 +19,7 @@ ActiveRecord::Base.connection.tables.each do |table|
   next if table == 'schema_migrations'
 
   # MySQL and PostgreSQL
-  ActiveRecord::Base.connection.execute("TRUNCATE #{table} CASCADE")
+  ActiveRecord::Base.connection.execute("TRUNCATE #{table} CASCADE RESTART IDENTITY")
 
   # SQLite
   # ActiveRecord::Base.connection.execute("DELETE FROM #{table}")
