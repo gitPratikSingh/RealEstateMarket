@@ -6,9 +6,6 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-require 'database_cleaner'
-
-DatabaseCleaner.clean_with(:truncation)
 
 admin_list = [
     [ "admin1@dm.com", "admin1_name", "admin1@dm.com", "(123) 456-7890" ],
