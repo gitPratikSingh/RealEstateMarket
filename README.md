@@ -4,6 +4,45 @@
 The following is an enumerated list of each requirement layed out in the document, and a mechanism to test it. For the graders convenience, the application comes pre-seeded with a number of useful models, which we will reference over the course of this guide. They can be found in the /db/seeds.rb file.
 
 ### How to Test Admins
+* Log in with email and password.
+1. Log in as admin1@dm.com with password 'GoPack2018'.
+Success: you are now logged in as admin1@dm.com.
+
+* Edit their own profile.
+1. While logged in as admin1@dm.com, click Edit_profile at the top of the screen.
+2. Enter your Current password into the Current password field. 
+3. Change another field's value
+4. Click Update.
+5. Once on the home screen again, click Edit profile.
+Success: You see whatever change you made persisted.
+
+* Create realtor and house hunter accounts.
+1. After logged in as admin1@dm.com, click "Admin Home Page".
+2. From the actions menu, you can click on the links "createRealtor" and "createHouseHunter" to create realtor and house hunter accounts.
+
+* Create real estate company
+1. After logged in as admin1@dm.com, click "Admin Home Page".
+2. From the actions menu, you can click on the link "createRealEstateCompany" to create a Real Estate Company
+
+* View the list of users and their profile details (except password)
+1. After logged in as admin1@dm.com, click "Admin Home Page".
+2. From the actions menu, you can click on the link "viewAllUsers" to view the list of all users. Click on the "Edit" to edit any user you desire.
+
+* View the list of real estate companies, along with detailed information.
+1. After logged in as admin1@dm.com, click "Admin Home Page".
+2. From the actions menu, you can click on the link "viewAllRealEstateCompanies" to view the list of all Real Estate Companies with all the details.
+
+* View the list of houses, along with detailed information.
+1. After logged in as admin1@dm.com, click "Admin Home Page".
+2. From the actions menu, you can click on the link "viewAllHouses" to view the list of all houses with all the details.
+
+* View all fields of inquiries (defined below) from house hunters.
+1. After logged in as admin1@dm.com, click "Admin Home Page".
+2. From the actions menu, you can click on the link "viewAllInquiries" to view the list of all inquiries with all the details.
+
+* Edit or delete real estate companies/users (realtors or house hunters)/houses/inquiries from the system.
+1. After logged in as admin1@dm.com, click "Admin Home Page".
+2. From the actions menu, you can click on the lins viewAllRealEstateCompanies/viewAllUsers/viewAllHouses/viewAllInquiries to view the list of all Real Estate Companies/Users/Houses/Inquiries respectively. Click on the Edit/destroy to edit/delete any item you desire.
 
 ### How to Test Realtors
 A. Sign up as Realtor
