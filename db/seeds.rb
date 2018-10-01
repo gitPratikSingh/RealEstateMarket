@@ -6,20 +6,12 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-House.destroy_all
-InterestList.destroy_all
-HouseHunter.destroy_all
-Realtor.destroy_all
-RealEstateCompany.destroy_all
-Admin.destroy_all
-User.destroy_all
-
 ActiveRecord::Base.establish_connection
 ActiveRecord::Base.connection.tables.each do |table|
   next if table == 'schema_migrations'
 
   # MySQL and PostgreSQL
-  ActiveRecord::Base.connection.execute("TRUNCATE #{table} CASCADE RESTART IDENTITY")
+  ActiveRecord::Base.connection.execute("TRUNCATE #{table} RESTART IDENTITY CASCADE")
 
   # SQLite
   # ActiveRecord::Base.connection.execute("DELETE FROM #{table}")
