@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Potential Buyers</h1>
+
+<table>
+  <thead>
+  <tr>
+    <th>Name</th>
+    <th>Email</th>
+    <th>Phone</th>
+    <th>Preferred Contact</th>
+    <th colspan="3"></th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <% @buyers.each do |house_hunter| %>
+    <tr>
+      <td><%= house_hunter.user.name %></td>
+      <td><%= house_hunter.user.email %></td>
+      <td><%= house_hunter.user.phone %></td>
+      <td><%= house_hunter.preferred_contact %></td>
+      <td><%= link_to 'Show', house_hunter %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+
+<br>
+
+
+<%= link_to 'Back', realtor_path %> |
+<%= link_to 'Home', root_path %>

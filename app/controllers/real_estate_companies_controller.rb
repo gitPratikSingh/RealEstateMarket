@@ -25,7 +25,7 @@ class RealEstateCompaniesController < ApplicationController
       @realEstateCompany =RealEstateCompany.find(params['id'])
     else
       respond_to do |format|
-        format.html { redirect_to real_estate_companies_url, notice: 'Cannot edit a Real State Company. You do not have access' }
+        format.html { redirect_to real_estate_companies_url, notice: 'Cannot edit a Real Estate Company. You do not have access' }
         format.json { head :no_content }
       end
     end
@@ -45,18 +45,24 @@ class RealEstateCompaniesController < ApplicationController
 
   def destroy
     if (current_user && current_user.admin)
-      @realEstateCompany =RealEstateCompany.find(params['id'])
+      @realEstateCompany = RealEstateCompany.find(params['id'])
       @realEstateCompany.destroy
       respond_to do |format|
-        format.html { redirect_to real_estate_companies_url, notice: 'Real State Company was successfully destroyed.' }
+        format.html { redirect_to real_estate_companies_url, notice: 'Real Estate Company was successfully destroyed.' }
         format.json { head :no_content }
       end
 
     else
       respond_to do |format|
-        format.html { redirect_to real_estate_companies_url, notice: 'Cannot delete Real State Company. You do not have access' }
+        format.html { redirect_to real_estate_companies_url, notice: 'Cannot delete Real Estate Company. You do not have access' }
         format.json { head :no_content }
       end
     end
   end
+
+  def potential_buyers
+    @buyers = Array.new
+    # RealEstateCompany.houses.each |house| d
+  end
+
 end
