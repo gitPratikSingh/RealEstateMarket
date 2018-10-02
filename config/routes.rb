@@ -12,7 +12,7 @@ Rails.application.routes.draw do
 
   # get 'real_estate_companies/:id/potential_buyers', to: 'real_estate_companies#potential_buyers'
 
-  #resources :users
+  resources :users
 
   resources :houses do
     resource :potential_buyers_lists
